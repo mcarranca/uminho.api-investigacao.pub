@@ -16,13 +16,13 @@ namespace uminho.api_investigacao.pub.Entities
         [JsonPropertyName("AdviseID")]
         public string? AdviseID { get; set; }
         [JsonPropertyName("persons")] 
-        public Person[] Persons { get; set; }
+        public IEnumerable<Person>? Persons { get; set; }
         [JsonPropertyName("start")]
         public string? Start { get; set; }
         [JsonPropertyName("end")]
         public string? End { get; set; }
         [JsonPropertyName("degree")]
-        public Degree Degree { get; set; }
+        public Degree? Degree { get; set; }
         [JsonPropertyName("courseName")]
         public string? CourseName { get; set; }
         [JsonPropertyName("courseID")]

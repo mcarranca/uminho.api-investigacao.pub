@@ -16,7 +16,7 @@ namespace uminho.api_investigacao.pub.Entities
         public string? CurricularUnitInternalId { get; set; }
 
         [JsonPropertyName("_curricularUnit")]
-        public CurricularUnit _CurricularUnit { get; set; }
+        public CurricularUnit? CurricularUnit { get; set; }
 
         [JsonPropertyName("period")]
         public string? Period { get; set; }

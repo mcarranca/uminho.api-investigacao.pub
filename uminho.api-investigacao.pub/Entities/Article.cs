@@ -49,7 +49,7 @@ namespace uminho.api_investigacao.pub.Entities
         public string? AuthorInternalId { get; set; }
 
         [JsonPropertyName("authors")]
-        public Author[] Authors { get; set; }
+        public IEnumerable<Author>? Authors { get; set; }
 
         [JsonPropertyName("authorGivenName")]
         public string? AuthorGivenName { get; set; }
