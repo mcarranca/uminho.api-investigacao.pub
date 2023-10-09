@@ -24,12 +24,12 @@ namespace uminho.api_investigacao.pub.Controllers {
         #region Method members
         [HttpGet("project/all"),
         AllowAnonymous]
-        public IEnumerable<Project> GetAllProjectIds() => new Project[]
+        public IEnumerable<ProjectEntity> GetAllProjectIds() => new ProjectEntity[]
         {
-            new Project()
+            new ProjectEntity()
             {
                 Abstract = "abstract_00",
-                Concepts = Array.Empty<Concept>(),
+                Concepts = Array.Empty<ConceptEntity>(),
                 End = "end_00",
                 FundingOrganization = "fundingOrganization_00",
                 GrantDirectCosts = "grantDirectCosts_00",
@@ -38,7 +38,7 @@ namespace uminho.api_investigacao.pub.Controllers {
                 Name = "name_00",
                 OrganizationInternalId = "organizationInternalId_00",
                 OrganizationRingoldId = "organizationRingoldId_00",
-                Persons = Array.Empty<Person>(),
+                Persons = Array.Empty<PersonEntity>(),
                 PrincipalInternalID = "principalInternalID_00",
                 PrincipalInvestigatorName = "principalInvestigatorName_00",
                 Reference = "reference_00",
@@ -46,10 +46,10 @@ namespace uminho.api_investigacao.pub.Controllers {
                 Start = "start_00",
                 TotalAwardAmount = "totalAwardAmount_00"
             },
-            new Project()
+            new ProjectEntity()
             {
                 Abstract = "abstract_01",
-                Concepts = Array.Empty<Concept>(),
+                Concepts = Array.Empty<ConceptEntity>(),
                 End = "end_01",
                 FundingOrganization = "fundingOrganization_01",
                 GrantDirectCosts = "grantDirectCosts_01",
@@ -58,7 +58,7 @@ namespace uminho.api_investigacao.pub.Controllers {
                 Name = "name_01",
                 OrganizationInternalId = "organizationInternalId_01",
                 OrganizationRingoldId = "organizationRingoldId_01",
-                Persons = Array.Empty<Person>(),
+                Persons = Array.Empty<PersonEntity>(),
                 PrincipalInternalID = "principalInternalID_01",
                 PrincipalInvestigatorName = "principalInvestigatorName_01",
                 Reference = "reference_01",
@@ -66,10 +66,10 @@ namespace uminho.api_investigacao.pub.Controllers {
                 Start = "start_01",
                 TotalAwardAmount = "totalAwardAmount_01"
             },
-            new Project()
+            new ProjectEntity()
             {
                 Abstract = "abstract_02",
-                Concepts = Array.Empty<Concept>(),
+                Concepts = Array.Empty<ConceptEntity>(),
                 End = "end_02",
                 FundingOrganization = "fundingOrganization_02",
                 GrantDirectCosts = "grantDirectCosts_02",
@@ -78,7 +78,7 @@ namespace uminho.api_investigacao.pub.Controllers {
                 Name = "name_02",
                 OrganizationInternalId = "organizationInternalId_02",
                 OrganizationRingoldId = "organizationRingoldId_02",
-                Persons = Array.Empty<Person>(),
+                Persons = Array.Empty<PersonEntity>(),
                 PrincipalInternalID = "principalInternalID_02",
                 PrincipalInvestigatorName = "principalInvestigatorName_02",
                 Reference = "reference_02",
@@ -91,7 +91,7 @@ namespace uminho.api_investigacao.pub.Controllers {
 
         [HttpGet("project"),
             AllowAnonymous]
-        public IEnumerable<Project> GetProjectIds(
+        public IEnumerable<ProjectEntity> GetProjectIds(
             [FromQuery] string? @abstract,
             [FromQuery] string? end,
             [FromQuery] string? fundingOrganization,

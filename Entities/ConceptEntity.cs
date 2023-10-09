@@ -2,8 +2,8 @@
 
 namespace uminho.api_investigacao.pub.Entities {
     [Serializable,
-        JsonSerializable(typeof(Concept), TypeInfoPropertyName = "concept")]
-    public class Concept {
+        JsonSerializable(typeof(ConceptEntity), TypeInfoPropertyName = "concept")]
+    public class ConceptEntity {
         #region Property members
 
         [JsonPropertyName("id")]

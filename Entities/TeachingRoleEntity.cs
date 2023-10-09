@@ -5,9 +5,9 @@ namespace uminho.api_investigacao.pub.Entities
 {
     //TODO: Teaching e TeachingRoles são iguais
     [Serializable,
-    JsonSerializable(typeof(Teaching), TypeInfoPropertyName = "teaching")]
- 
-    public class Teaching
+    JsonSerializable(typeof(TeachingRoleEntity), TypeInfoPropertyName = "teachingRoles")]
+
+    public class TeachingRoleEntity
     {
         [JsonPropertyName("role")]
         public string? Role { get; set; }
@@ -15,8 +15,8 @@ namespace uminho.api_investigacao.pub.Entities
         [JsonPropertyName("curricularUnitInternalId")]
         public string? CurricularUnitInternalId { get; set; }
 
-        [JsonPropertyName("_curricularUnit")]
-        public CurricularUnit CurricularUnit { get; set; }
+        [JsonPropertyName("curricularUnit")]
+        public CurricularUnitEntity? CurricularUnit { get; set; }
 
         [JsonPropertyName("period")]
         public string? Period { get; set; }

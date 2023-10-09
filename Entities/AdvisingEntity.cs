@@ -4,8 +4,8 @@ using System.Text.Json.Serialization;
 namespace uminho.api_investigacao.pub.Entities
 {
     [Serializable,
-   JsonSerializable(typeof(Advising), TypeInfoPropertyName = "advising")]
-    public class Advising
+   JsonSerializable(typeof(AdvisingEntity), TypeInfoPropertyName = "advising")]
+    public class AdvisingEntity
     {
         [JsonPropertyName("AdvisingroleID")]
         public string? AdvisingroleID { get; set; }
@@ -16,13 +16,13 @@ namespace uminho.api_investigacao.pub.Entities
         [JsonPropertyName("AdviseID")]
         public string? AdviseID { get; set; }
         [JsonPropertyName("persons")] 
-        public IEnumerable<Person>? Persons { get; set; }
+        public IEnumerable<PersonEntity>? Persons { get; set; }
         [JsonPropertyName("start")]
         public string? Start { get; set; }
         [JsonPropertyName("end")]
         public string? End { get; set; }
         [JsonPropertyName("degree")]
-        public Degree? Degree { get; set; }
+        public DegreeEntity? Degree { get; set; }
         [JsonPropertyName("courseName")]
         public string? CourseName { get; set; }
         [JsonPropertyName("courseID")]

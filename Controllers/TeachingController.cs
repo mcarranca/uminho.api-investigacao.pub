@@ -26,71 +26,71 @@ namespace uminho.api_investigacao.pub.Controllers
 
         [HttpGet("teaching/all"),
         AllowAnonymous]
-        public IEnumerable<Teaching> GetAllTeaching() => new Teaching[]
+        public IEnumerable<TeachingEntity> GetAllTeaching() => new TeachingEntity[]
         {
-            new Teaching()
+            new TeachingEntity()
             {
                 Role = "role_00",
                 Period = "period_00",
-                CurricularUnit = new CurricularUnit {
+                CurricularUnit = new CurricularUnitEntity {
                                     InternalID = "internalID_00",
                                     Name= "name_00",
-                                    Concepts = new Concept[] {
-                                        new Concept() {
+                                    Concepts = new ConceptEntity[] {
+                                        new ConceptEntity() {
                                             Id = "id_00",
                                             Name = "name_00" },
-                                        new Concept() {
+                                        new ConceptEntity() {
                                             Id = "id_01",
                                             Name = "name_01"
                                         }
                                     },
-                                    Courses = new Course[] {
-                                        new Course() {
+                                    Courses = new CourseEntity[] {
+                                        new CourseEntity() {
                                         InternalID = "id_00",
                                         Name = "name_00",
-                                        Concepts = new Concept[] {
-                                            new Concept(){
+                                        Concepts = new ConceptEntity[] {
+                                            new ConceptEntity(){
                                                     Id = "id_00",
                                                     Name = "name_00"
                                             },
-                                            new Concept(){
+                                            new ConceptEntity(){
                                                     Id = "id_01",
                                                     Name = "name_01"
                                             },
                                         },
-                                        Degrees = new Degree[] {
-                                            new Degree()
+                                        Degrees = new DegreeEntity[] {
+                                            new DegreeEntity()
                                             {
                                                 InternalID = "id_00",
                                                 Name = "name_00"
                                             },
-                                            new Degree()
+                                            new DegreeEntity()
                                             {
                                                 InternalID = "id_01",
                                                 Name = "name_01"
                                             }
                                         }
                                     },
-                                    new Course()
+                                    new CourseEntity()
                                     {
                                         InternalID = "id_01",
-                                        Concepts = new Concept[] {
-                                            new Concept(){
+                                        Concepts = new ConceptEntity[] {
+                                            new ConceptEntity(){
                                                     Id = "id_00",
                                                     Name = "name_00"
                                             },
-                                            new Concept(){
+                                            new ConceptEntity(){
                                                     Id = "id_01",
                                                     Name = "name_01"
                                             },
                                         },
-                                        Degrees = new Degree[] {
-                                            new Degree()
+                                        Degrees = new DegreeEntity[] {
+                                            new DegreeEntity()
                                             {
                                                 InternalID = "id_00",
                                                 Name = "name_00"
                                             },
-                                            new Degree()
+                                            new DegreeEntity()
                                             {
                                                 InternalID = "id_01",
                                                 Name = "name_01"
@@ -100,70 +100,70 @@ namespace uminho.api_investigacao.pub.Controllers
                                 }
                               }
             },
-            new Teaching
+            new TeachingEntity
             {
                 Role = "role_01",
                 Period = "period_01",
-                CurricularUnit = new CurricularUnit {
+                CurricularUnit = new CurricularUnitEntity {
                                     InternalID = "internalID_01",
                                     Name= "name_01",
-                                     Concepts = new Concept[] {
-                                        new Concept(){
+                                     Concepts = new ConceptEntity[] {
+                                        new ConceptEntity(){
                                              Id = "id_00",
                                              Name = "name_00"
                                         },
-                                        new Concept(){
+                                        new ConceptEntity(){
                                              Id = "id_01",
                                              Name = "name_01"
                                         },
                                     },
-                                    Courses = new Course[] {
-                                        new Course() {
+                                    Courses = new CourseEntity[] {
+                                        new CourseEntity() {
                                         InternalID = "id_00",
                                         Name = "name_00",
-                                        Concepts = new Concept[] {
-                                            new Concept(){
+                                        Concepts = new ConceptEntity[] {
+                                            new ConceptEntity(){
                                                     Id = "id_00",
                                                     Name = "name_00"
                                             },
-                                            new Concept(){
+                                            new ConceptEntity(){
                                                     Id = "id_01",
                                                     Name = "name_01"
                                             },
                                         },
-                                        Degrees = new Degree[] {
-                                            new Degree()
+                                        Degrees = new DegreeEntity[] {
+                                            new DegreeEntity()
                                             {
                                                 InternalID = "id_00",
                                                 Name = "name_00"
                                             },
-                                            new Degree()
+                                            new DegreeEntity()
                                             {
                                                 InternalID = "id_01",
                                                 Name = "name_01"
                                             }
                                         }
                                     },
-                                    new Course()
+                                    new CourseEntity()
                                     {
                                         InternalID = "id_01",
-                                        Concepts = new Concept[] {
-                                            new Concept(){
+                                        Concepts = new ConceptEntity[] {
+                                            new ConceptEntity(){
                                                     Id = "id_00",
                                                     Name = "name_00"
                                             },
-                                            new Concept(){
+                                            new ConceptEntity(){
                                                     Id = "id_01",
                                                     Name = "name_01"
                                             },
                                         },
-                                        Degrees = new Degree[] {
-                                            new Degree()
+                                        Degrees = new DegreeEntity[] {
+                                            new DegreeEntity()
                                             {
                                                 InternalID = "id_00",
                                                 Name = "name_00"
                                             },
-                                            new Degree()
+                                            new DegreeEntity()
                                             {
                                                 InternalID = "id_01",
                                                 Name = "name_01"
@@ -177,7 +177,7 @@ namespace uminho.api_investigacao.pub.Controllers
 
         [HttpGet("Teaching"),
           AllowAnonymous]
-        public IEnumerable<Teaching> GetTeaching(
+        public IEnumerable<TeachingEntity> GetTeaching(
           [FromQuery] string? roleID
             )
             => (from t0 in this.GetAllTeaching()
@@ -186,69 +186,69 @@ namespace uminho.api_investigacao.pub.Controllers
 
         [HttpGet("curricularUnit/all"),
        AllowAnonymous]
-        public IEnumerable<CurricularUnit> GetAllCurricularUnit() => new CurricularUnit[]
+        public IEnumerable<CurricularUnitEntity> GetAllCurricularUnit() => new CurricularUnitEntity[]
        {
-           new CurricularUnit
+           new CurricularUnitEntity
            {
                InternalID = "id_00",
                Name = "name_00",
-                Concepts = new Concept[] {
-                    new Concept(){
+                Concepts = new ConceptEntity[] {
+                    new ConceptEntity(){
                          Id = "id_00",
                          Name = "name_00"
                     },
-                    new Concept(){
+                    new ConceptEntity(){
                          Id = "id_01",
                          Name = "name_01"
                     },
                 },
-               Courses = new Course[] {
-                                        new Course() {
+               Courses = new CourseEntity[] {
+                                        new CourseEntity() {
                                         InternalID = "id_00",
                                         Name = "name_00",
-                                        Concepts = new Concept[] {
-                                            new Concept(){
+                                        Concepts = new ConceptEntity[] {
+                                            new ConceptEntity(){
                                                     Id = "id_00",
                                                     Name = "name_00"
                                             },
-                                            new Concept(){
+                                            new ConceptEntity(){
                                                     Id = "id_01",
                                                     Name = "name_01"
                                             },
                                         },
-                                        Degrees = new Degree[] {
-                                            new Degree()
+                                        Degrees = new DegreeEntity[] {
+                                            new DegreeEntity()
                                             {
                                                 InternalID = "id_00",
                                                 Name = "name_00"
                                             },
-                                            new Degree()
+                                            new DegreeEntity()
                                             {
                                                 InternalID = "id_01",
                                                 Name = "name_01"
                                             }
                                         }
                                     },
-                                    new Course()
+                                    new CourseEntity()
                                     {
                                         InternalID = "id_01",
-                                        Concepts = new Concept[] {
-                                            new Concept(){
+                                        Concepts = new ConceptEntity[] {
+                                            new ConceptEntity(){
                                                     Id = "id_00",
                                                     Name = "name_00"
                                             },
-                                            new Concept(){
+                                            new ConceptEntity(){
                                                     Id = "id_01",
                                                     Name = "name_01"
                                             },
                                         },
-                                        Degrees = new Degree[] {
-                                            new Degree()
+                                        Degrees = new DegreeEntity[] {
+                                            new DegreeEntity()
                                             {
                                                 InternalID = "id_00",
                                                 Name = "name_00"
                                             },
-                                            new Degree()
+                                            new DegreeEntity()
                                             {
                                                 InternalID = "id_01",
                                                 Name = "name_01"
@@ -257,67 +257,67 @@ namespace uminho.api_investigacao.pub.Controllers
                                     },
                                 }
            },
-           new CurricularUnit
+           new CurricularUnitEntity
            {
                InternalID = "id_01",
                Name = "name_01",
-                Concepts = new Concept[] {
-                    new Concept(){
+                Concepts = new ConceptEntity[] {
+                    new ConceptEntity(){
                          Id = "id_00",
                          Name = "name_00"
                     },
-                    new Concept(){
+                    new ConceptEntity(){
                          Id = "id_01",
                          Name = "name_01"
                     },
                 },
-               Courses = new Course[] {
-                                        new Course() {
+               Courses = new CourseEntity[] {
+                                        new CourseEntity() {
                                         InternalID = "id_00",
                                         Name = "name_00",
-                                        Concepts = new Concept[] {
-                                            new Concept(){
+                                        Concepts = new ConceptEntity[] {
+                                            new ConceptEntity(){
                                                     Id = "id_00",
                                                     Name = "name_00"
                                             },
-                                            new Concept(){
+                                            new ConceptEntity(){
                                                     Id = "id_01",
                                                     Name = "name_01"
                                             },
                                         },
-                                        Degrees = new Degree[] {
-                                            new Degree()
+                                        Degrees = new DegreeEntity[] {
+                                            new DegreeEntity()
                                             {
                                                 InternalID = "id_00",
                                                 Name = "name_00"
                                             },
-                                            new Degree()
+                                            new DegreeEntity()
                                             {
                                                 InternalID = "id_01",
                                                 Name = "name_01"
                                             }
                                         }
                                     },
-                                    new Course()
+                                    new CourseEntity()
                                     {
                                         InternalID = "id_01",
-                                        Concepts = new Concept[] {
-                                            new Concept(){
+                                        Concepts = new ConceptEntity[] {
+                                            new ConceptEntity(){
                                                     Id = "id_00",
                                                     Name = "name_00"
                                             },
-                                            new Concept(){
+                                            new ConceptEntity(){
                                                     Id = "id_01",
                                                     Name = "name_01"
                                             },
                                         },
-                                        Degrees = new Degree[] {
-                                            new Degree()
+                                        Degrees = new DegreeEntity[] {
+                                            new DegreeEntity()
                                             {
                                                 InternalID = "id_00",
                                                 Name = "name_00"
                                             },
-                                            new Degree()
+                                            new DegreeEntity()
                                             {
                                                 InternalID = "id_01",
                                                 Name = "name_01"
@@ -326,67 +326,67 @@ namespace uminho.api_investigacao.pub.Controllers
                                     },
                                 }
            },
-           new CurricularUnit
+           new CurricularUnitEntity
            {
                InternalID = "id_02",
                Name = "name_02",
-                Concepts = new Concept[] {
-                    new Concept(){
+                Concepts = new ConceptEntity[] {
+                    new ConceptEntity(){
                          Id = "id_00",
                          Name = "name_00"
                     },
-                    new Concept(){
+                    new ConceptEntity(){
                          Id = "id_01",
                          Name = "name_01"
                     },
                 },
-                Courses = new Course[] {
-                        new Course() {
+                Courses = new CourseEntity[] {
+                        new CourseEntity() {
                         InternalID = "id_00",
                         Name = "name_00",
-                        Concepts = new Concept[] {
-                            new Concept(){
+                        Concepts = new ConceptEntity[] {
+                            new ConceptEntity(){
                                     Id = "id_00",
                                     Name = "name_00"
                             },
-                            new Concept(){
+                            new ConceptEntity(){
                                     Id = "id_01",
                                     Name = "name_01"
                             },
                         },
-                        Degrees = new Degree[] {
-                            new Degree()
+                        Degrees = new DegreeEntity[] {
+                            new DegreeEntity()
                             {
                                 InternalID = "id_00",
                                 Name = "name_00"
                             },
-                            new Degree()
+                            new DegreeEntity()
                             {
                                 InternalID = "id_01",
                                 Name = "name_01"
                             }
                         }
                     },
-                    new Course()
+                    new CourseEntity()
                     {
                         InternalID = "id_01",
-                        Concepts = new Concept[] {
-                            new Concept(){
+                        Concepts = new ConceptEntity[] {
+                            new ConceptEntity(){
                                     Id = "id_00",
                                     Name = "name_00"
                             },
-                            new Concept(){
+                            new ConceptEntity(){
                                     Id = "id_01",
                                     Name = "name_01"
                             },
                         },
-                        Degrees = new Degree[] {
-                            new Degree()
+                        Degrees = new DegreeEntity[] {
+                            new DegreeEntity()
                             {
                                 InternalID = "id_00",
                                 Name = "name_00"
                             },
-                            new Degree()
+                            new DegreeEntity()
                             {
                                 InternalID = "id_01",
                                 Name = "name_01"
@@ -400,7 +400,7 @@ namespace uminho.api_investigacao.pub.Controllers
 
         [HttpGet("CurricularUnit"),
           AllowAnonymous]
-        public IEnumerable<CurricularUnit> GetCurricularUnit(
+        public IEnumerable<CurricularUnitEntity> GetCurricularUnit(
           [FromQuery] string? internalID,
           [FromQuery] string? name
             )
@@ -412,19 +412,19 @@ namespace uminho.api_investigacao.pub.Controllers
 
         [HttpGet("concept/all"),
         AllowAnonymous]
-        public IEnumerable<Concept> GetAllConcepts() => new Concept[]
+        public IEnumerable<ConceptEntity> GetAllConcepts() => new ConceptEntity[]
         {
-            new Concept
+            new ConceptEntity
             {
                 Id = "id_00",
                 Name = "name_00",
             },
-            new Concept
+            new ConceptEntity
             {
                 Id = "id_01",
                 Name = "name_01",
             },
-            new Concept
+            new ConceptEntity
             {
                 Id = "id_02",
                 Name = "name_02",
@@ -434,7 +434,7 @@ namespace uminho.api_investigacao.pub.Controllers
 
         [HttpGet("Concept"),
           AllowAnonymous]
-        public IEnumerable<Concept> GetConcept(
+        public IEnumerable<ConceptEntity> GetConcept(
           [FromQuery] string? id,
           [FromQuery] string? name
             )
@@ -447,72 +447,72 @@ namespace uminho.api_investigacao.pub.Controllers
 
         [HttpGet("teachingRoles/all"),
         AllowAnonymous]
-        public IEnumerable<TeachingRoles> GetAllTeachingRoles() => new TeachingRoles[]
+        public IEnumerable<TeachingRoleEntity> GetAllTeachingRoles() => new TeachingRoleEntity[]
         {
-            new TeachingRoles()
+            new TeachingRoleEntity()
             {
                 Role = "role_00",
                 Period = "period_00",
-                _CurricularUnit = new CurricularUnit {
+                CurricularUnit = new CurricularUnitEntity {
                                     InternalID = "internalID_00",
                                     Name= "name_00",
-                                     Concepts = new Concept[] {
-                                        new Concept(){
+                                     Concepts = new ConceptEntity[] {
+                                        new ConceptEntity(){
                                              Id = "id_00",
                                              Name = "name_00"
                                         },
-                                        new Concept(){
+                                        new ConceptEntity(){
                                              Id = "id_01",
                                              Name = "name_01"
                                         },
                                     },
-                                    Courses = new Course[] {
-                                        new Course() {
+                                    Courses = new CourseEntity[] {
+                                        new CourseEntity() {
                                         InternalID = "id_00",
                                         Name = "name_00",
-                                        Concepts = new Concept[] {
-                                            new Concept(){
+                                        Concepts = new ConceptEntity[] {
+                                            new ConceptEntity(){
                                                     Id = "id_00",
                                                     Name = "name_00"
                                             },
-                                            new Concept(){
+                                            new ConceptEntity(){
                                                     Id = "id_01",
                                                     Name = "name_01"
                                             },
                                         },
-                                        Degrees = new Degree[] {
-                                            new Degree()
+                                        Degrees = new DegreeEntity[] {
+                                            new DegreeEntity()
                                             {
                                                 InternalID = "id_00",
                                                 Name = "name_00"
                                             },
-                                            new Degree()
+                                            new DegreeEntity()
                                             {
                                                 InternalID = "id_01",
                                                 Name = "name_01"
                                             }
                                         }
                                     },
-                                    new Course()
+                                    new CourseEntity()
                                     {
                                         InternalID = "id_01",
-                                        Concepts = new Concept[] {
-                                            new Concept(){
+                                        Concepts = new ConceptEntity[] {
+                                            new ConceptEntity(){
                                                     Id = "id_00",
                                                     Name = "name_00"
                                             },
-                                            new Concept(){
+                                            new ConceptEntity(){
                                                     Id = "id_01",
                                                     Name = "name_01"
                                             },
                                         },
-                                        Degrees = new Degree[] {
-                                            new Degree()
+                                        Degrees = new DegreeEntity[] {
+                                            new DegreeEntity()
                                             {
                                                 InternalID = "id_00",
                                                 Name = "name_00"
                                             },
-                                            new Degree()
+                                            new DegreeEntity()
                                             {
                                                 InternalID = "id_01",
                                                 Name = "name_01"
@@ -523,70 +523,70 @@ namespace uminho.api_investigacao.pub.Controllers
                                 },
                 CurricularUnitInternalId = "id_00"
             },
-            new TeachingRoles
+            new TeachingRoleEntity
             {
                 Role = "role_01",
                 Period = "period_01",
-                _CurricularUnit = new CurricularUnit {
+                CurricularUnit = new CurricularUnitEntity {
                                     InternalID = "internalID_01",
                                     Name= "name_01",
-                                     Concepts = new Concept[] {
-                                        new Concept(){
+                                     Concepts = new ConceptEntity[] {
+                                        new ConceptEntity(){
                                              Id = "id_00",
                                              Name = "name_00"
                                         },
-                                        new Concept(){
+                                        new ConceptEntity(){
                                              Id = "id_01",
                                              Name = "name_01"
                                         },
                                     },
-                                    Courses = new Course[] {
-                                        new Course() {
+                                    Courses = new CourseEntity[] {
+                                        new CourseEntity() {
                                         InternalID = "id_00",
                                         Name = "name_00",
-                                        Concepts = new Concept[] {
-                                            new Concept(){
+                                        Concepts = new ConceptEntity[] {
+                                            new ConceptEntity(){
                                                     Id = "id_00",
                                                     Name = "name_00"
                                             },
-                                            new Concept(){
+                                            new ConceptEntity(){
                                                     Id = "id_01",
                                                     Name = "name_01"
                                             },
                                         },
-                                        Degrees = new Degree[] {
-                                            new Degree()
+                                        Degrees = new DegreeEntity[] {
+                                            new DegreeEntity()
                                             {
                                                 InternalID = "id_00",
                                                 Name = "name_00"
                                             },
-                                            new Degree()
+                                            new DegreeEntity()
                                             {
                                                 InternalID = "id_01",
                                                 Name = "name_01"
                                             }
                                         }
                                     },
-                                    new Course()
+                                    new CourseEntity()
                                     {
                                         InternalID = "id_01",
-                                        Concepts = new Concept[] {
-                                            new Concept(){
+                                        Concepts = new ConceptEntity[] {
+                                            new ConceptEntity(){
                                                     Id = "id_00",
                                                     Name = "name_00"
                                             },
-                                            new Concept(){
+                                            new ConceptEntity(){
                                                     Id = "id_01",
                                                     Name = "name_01"
                                             },
                                         },
-                                        Degrees = new Degree[] {
-                                            new Degree()
+                                        Degrees = new DegreeEntity[] {
+                                            new DegreeEntity()
                                             {
                                                 InternalID = "id_00",
                                                 Name = "name_00"
                                             },
-                                            new Degree()
+                                            new DegreeEntity()
                                             {
                                                 InternalID = "id_01",
                                                 Name = "name_01"
@@ -601,7 +601,7 @@ namespace uminho.api_investigacao.pub.Controllers
 
         [HttpGet("teachingRoles"),
           AllowAnonymous]
-        public IEnumerable<TeachingRoles> GetTeachingRole(
+        public IEnumerable<TeachingRoleEntity> GetTeachingRole(
           [FromQuery] string? roleID
             )
             => (from t0 in this.GetAllTeachingRoles()
@@ -611,82 +611,82 @@ namespace uminho.api_investigacao.pub.Controllers
 
         [HttpGet("course/all"),
          AllowAnonymous]
-        public IEnumerable<Course> GetAllCourse() => new Course[]
+        public IEnumerable<CourseEntity> GetAllCourse() => new CourseEntity[]
         {
-            new Course()
+            new CourseEntity()
             {
                 InternalID = "id_00",
                 Name = "name_00",
-                Concepts = new Concept[] {
-                    new Concept(){
+                Concepts = new ConceptEntity[] {
+                    new ConceptEntity(){
                          Id = "id_00",
                          Name = "name_00"
                     },
-                    new Concept(){
+                    new ConceptEntity(){
                          Id = "id_01",
                          Name = "name_01"
                     },
                 },
-                Degrees = new Degree[] {
-                    new Degree()
+                Degrees = new DegreeEntity[] {
+                    new DegreeEntity()
                     {
                         InternalID = "id_00",
                         Name = "name_00"
                     },
-                    new Degree()
+                    new DegreeEntity()
                     {
                         InternalID = "id_01",
                         Name = "name_01"
                     }
                 }
             },
-            new Course()
+            new CourseEntity()
             {
                 InternalID = "id_01",
-                Concepts = new Concept[] {
-                    new Concept(){
+                Concepts = new ConceptEntity[] {
+                    new ConceptEntity(){
                          Id = "id_00",
                          Name = "name_00"
                     },
-                    new Concept(){
+                    new ConceptEntity(){
                          Id = "id_01",
                          Name = "name_01"
                     },
                 },
-                Degrees = new Degree[] {
-                    new Degree()
+                Degrees = new DegreeEntity[] {
+                    new DegreeEntity()
                     {
                         InternalID = "id_00",
                         Name = "name_00"
                     },
-                    new Degree()
+                    new DegreeEntity()
                     {
                         InternalID = "id_01",
                         Name = "name_01"
                     }
                 }
             },
-            new Course()
+            new CourseEntity()
             {
                 InternalID = "id_02",
                 Name = "name_02",
-                Concepts = new Concept[] {
-                    new Concept(){
+                Concepts = new ConceptEntity[] {
+                    new ConceptEntity(){
                          Id = "id_00",
                          Name = "name_00"
                     },
-                    new Concept(){
+                    new ConceptEntity(){
                          Id = "id_01",
                          Name = "name_01"
                     },
                 },
-                Degrees = new Degree[] {
-                    new Degree()
+                Degrees = new DegreeEntity[] {
+                    new DegreeEntity()
                     {
                         InternalID = "id_00",
                         Name = "name_00"
                     },
-                    new Degree()
+                    new DegreeEntity()
                     {
                         InternalID = "id_01",
                         Name = "name_01"
@@ -697,7 +697,7 @@ namespace uminho.api_investigacao.pub.Controllers
 
         [HttpGet("course"),
         AllowAnonymous]
-        public IEnumerable<Course> GetCourse(
+        public IEnumerable<CourseEntity> GetCourse(
                 [FromQuery] string? iD,
                 [FromQuery] string? name
           )
@@ -709,14 +709,14 @@ namespace uminho.api_investigacao.pub.Controllers
 
         [HttpGet("degree/all"),
          AllowAnonymous]
-        public IEnumerable<Degree> GetAllDegree() => new Degree[]
+        public IEnumerable<DegreeEntity> GetAllDegree() => new DegreeEntity[]
         {
-            new Degree()
+            new DegreeEntity()
             {
                 InternalID = "id_00",
                 Name = "name_00"
             },
-            new Degree()
+            new DegreeEntity()
             {
                 InternalID = "id_01",
                 Name = "name_01"
@@ -725,7 +725,7 @@ namespace uminho.api_investigacao.pub.Controllers
 
         [HttpGet("degree"),
         AllowAnonymous]
-        public IEnumerable<Degree> GetDegree(
+        public IEnumerable<DegreeEntity> GetDegree(
                 [FromQuery] string? iD,
                 [FromQuery] string? name
           )
@@ -736,38 +736,38 @@ namespace uminho.api_investigacao.pub.Controllers
 
         [HttpGet("advising/all"),
          AllowAnonymous]
-        public IEnumerable<Advising> GetAllAdvising() => new Advising[]
+        public IEnumerable<AdvisingEntity> GetAllAdvising() => new AdvisingEntity[]
         {
-            new Advising()
+            new AdvisingEntity()
             {
                 AdvisingroleID = "id_00",
                 AdvisingroleName = "roleName_00",
                 AdviseName = "name_00",
                 AdviseID = "id_00",
-                Persons = new Person[]
+                Persons = new PersonEntity[]
                 {
-                    new Person()
+                    new PersonEntity()
                     {
 
                     },
-                    new Person()
+                    new PersonEntity()
                     {
 
                     }
                 },
                 Start = "01-01-1900",
                 End = "01-01-2999",
-                Degree= new Degree() {
+                Degree= new DegreeEntity() {
                              InternalID = "id_00",
                              Name = "name_00"
                         },
-                CourseName = "name_00"
+                CourseName = "name_00",
                 CourseID = "id_00",
             }
         };
 
         [HttpGet("advising"), AllowAnonymous]
-        public IEnumerable<Advising> GetAdvising(
+        public IEnumerable<AdvisingEntity> GetAdvising(
             [FromQuery] string? Id,
             [FromQuery] string? name) => (from t0 in this.GetAllAdvising()
                                           where (Id.IsEqual(t0.AdviseID)

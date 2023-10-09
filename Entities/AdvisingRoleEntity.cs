@@ -3,9 +3,9 @@
 namespace uminho.api_investigacao.pub.Entities
 {
     [Serializable,
-    JsonSerializable(typeof(AdvisingRoles), TypeInfoPropertyName = "advisingRoles")]
+    JsonSerializable(typeof(AdvisingRoleEntity), TypeInfoPropertyName = "advisingRoles")]
 
-    public class AdvisingRoles
+    public class AdvisingRoleEntity
     {
         [JsonPropertyName("advisingRoleID")]
         public string? AdvisingRoleID { get; set; }

@@ -26,9 +26,9 @@ public class PublicationController
 
     [HttpGet("article/all"),
         AllowAnonymous]
-    public IEnumerable<Article> GetAllArticles() => new Article[]
+    public IEnumerable<ArticleEntity> GetAllArticles() => new ArticleEntity[]
         {
-            new Article()
+            new ArticleEntity()
             {
                 Abstract = "abstract_00",
                 AuthorFamilyName = "authorFamilyName_00",
@@ -48,7 +48,7 @@ public class PublicationController
                 StartPage = "startPage_00",
                 Volume  = "volumne_00",
             },
-            new Article()
+            new ArticleEntity()
             {
                 Abstract = "abstract_01",
                 AuthorFamilyName = "authorFamilyName_01",
@@ -68,7 +68,7 @@ public class PublicationController
                 StartPage = "startPage_01",
                 Volume  = "volumne_01",
             },
-            new Article()
+            new ArticleEntity()
             {
                 Abstract = "abstract_02",
                 AuthorFamilyName = "authorFamilyName_02",
@@ -92,7 +92,7 @@ public class PublicationController
 
     [HttpGet("article"),
         AllowAnonymous]
-    public IEnumerable<Article> GetArticles(
+    public IEnumerable<ArticleEntity> GetArticles(
         [FromQuery] string? @abstract,
         [FromQuery] string? authorFamilyName,
         [FromQuery] string? authorGivenName,
@@ -132,23 +132,23 @@ public class PublicationController
 
     [HttpGet("journal/all"),
         AllowAnonymous]
-    public IEnumerable<Journal> GetAllJournals() => new Journal[]
+    public IEnumerable<JournalEntity> GetAllJournals() => new JournalEntity[]
         {
-            new Journal()
+            new JournalEntity()
             {
                 Abbreviation = "abbreviation_00",
                 EISSN = "eissn_00",
                 ISSN = "issn_00",
                 Name = "name_00",
             },
-            new Journal()
+            new JournalEntity()
             {
                 Abbreviation = "abbreviation_01",
                 EISSN = "eissn_01",
                 ISSN = "issn_01",
                 Name = "name_01",
             },
-            new Journal()
+            new JournalEntity()
             {
                 Abbreviation = "abbreviation_02",
                 EISSN = "eissn_02",
@@ -159,7 +159,7 @@ public class PublicationController
 
     [HttpGet("journal"),
         AllowAnonymous]
-    public IEnumerable<Journal> GetJournals(
+    public IEnumerable<JournalEntity> GetJournals(
         [FromQuery] string? abbreviation,
         [FromQuery] string? eissn,
         [FromQuery] string? issn,
@@ -175,23 +175,23 @@ public class PublicationController
 
     [HttpGet("editor/all"),
         AllowAnonymous]
-    public IEnumerable<Editor> GetAllEditors() => new Editor[]
+    public IEnumerable<EditorEntity> GetAllEditors() => new EditorEntity[]
         {
-            new Editor()
+            new EditorEntity()
             {
                 Abbreviation = "abbreviation_00",
                 EISSN = "eissn_00",
                 ISSN = "issn_00",
                 Name = "name_00",
             },
-            new Editor()
+            new EditorEntity()
             {
                 Abbreviation = "abbreviation_01",
                 EISSN = "eissn_01",
                 ISSN = "issn_01",
                 Name = "name_01",
             },
-            new Editor()
+            new EditorEntity()
             {
                 Abbreviation = "abbreviation_02",
                 EISSN = "eissn_02",
@@ -202,7 +202,7 @@ public class PublicationController
 
     [HttpGet("editor"),
         AllowAnonymous]
-    public IEnumerable<Editor> GetEditors(
+    public IEnumerable<EditorEntity> GetEditors(
         [FromQuery] string? abbreviation,
         [FromQuery] string? eissn,
         [FromQuery] string? issn,

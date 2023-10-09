@@ -3,8 +3,8 @@
 namespace uminho.api_investigacao.pub.Entities
 {
     [Serializable,
-    JsonSerializable(typeof(Degree), TypeInfoPropertyName = "degree")]
-    public class Degree
+    JsonSerializable(typeof(DegreeEntity), TypeInfoPropertyName = "degree")]
+    public class DegreeEntity
     {
         [JsonPropertyName("internalID")]
         public string? InternalID { get; set; }

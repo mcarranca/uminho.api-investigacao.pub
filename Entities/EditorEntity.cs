@@ -3,9 +3,8 @@
 namespace uminho.api_investigacao.pub.Entities
 {
     [Serializable,
-        JsonSerializable(typeof(Editor), TypeInfoPropertyName = "editor")]
-    public class Editor
-    {
+        JsonSerializable(typeof(EditorEntity), TypeInfoPropertyName = "editor")]
+    public class EditorEntity {
         #region Property members
 
         [JsonPropertyName("name")]

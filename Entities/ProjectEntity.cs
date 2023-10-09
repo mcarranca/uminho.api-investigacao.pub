@@ -4,8 +4,8 @@ using System.Text.Json.Serialization;
 namespace uminho.api_investigacao.pub.Entities {
 
     [Serializable,
-        JsonSerializable(typeof(Project), TypeInfoPropertyName = "project")]
-    public class Project {
+        JsonSerializable(typeof(ProjectEntity), TypeInfoPropertyName = "project")]
+    public class ProjectEntity {
 
         #region Property members
 
@@ -49,7 +49,7 @@ namespace uminho.api_investigacao.pub.Entities {
         public string? PrincipalInvestigatorName { get; set; }
 
         [JsonPropertyName("Persons")]
-        public IEnumerable<Person>? Persons { get; set; }
+        public IEnumerable<PersonEntity>? Persons { get; set; }
 
         [JsonPropertyName("start")]
         public string? Start { get; set; }
@@ -58,7 +58,7 @@ namespace uminho.api_investigacao.pub.Entities {
         public string? End { get; set; }
 
         [JsonPropertyName("concepts")]
-        public IEnumerable<Concept>? Concepts { get; set; }
+        public IEnumerable<ConceptEntity>? Concepts { get; set; }
 
         [JsonPropertyName("fundingOrganization")]
         public string? FundingOrganization { get; set; }

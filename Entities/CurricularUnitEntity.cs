@@ -3,9 +3,9 @@
 namespace uminho.api_investigacao.pub.Entities
 {
     [Serializable,
-    JsonSerializable(typeof(CurricularUnit), TypeInfoPropertyName = "curricularUnit")]
+    JsonSerializable(typeof(CurricularUnitEntity), TypeInfoPropertyName = "curricularUnit")]
 
-    public class CurricularUnit
+    public class CurricularUnitEntity
     {
 
         [JsonPropertyName("internalID")]
@@ -15,10 +15,10 @@ namespace uminho.api_investigacao.pub.Entities
         public string? Name { get; set; }
 
         [JsonPropertyName("concepts")]
-        public IEnumerable<Concept>? Concepts { get; set; }
+        public IEnumerable<ConceptEntity>? Concepts { get; set; }
 
         [JsonPropertyName("courses")]
-        public IEnumerable<Course>? Courses { get; set; }
+        public IEnumerable<CourseEntity>? Courses { get; set; }
 
 
     }
