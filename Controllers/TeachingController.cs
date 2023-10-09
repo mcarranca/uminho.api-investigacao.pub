@@ -44,8 +44,61 @@ namespace uminho.api_investigacao.pub.Controllers
                                             Name = "name_01"
                                         }
                                     },
-                                    Courses = Array.Empty<Course>()
+                                    Courses = new Course[] {
+                                        new Course() {
+                                        InternalID = "id_00",
+                                        Name = "name_00",
+                                        Concepts = new Concept[] {
+                                            new Concept(){
+                                                    Id = "id_00",
+                                                    Name = "name_00"
+                                            },
+                                            new Concept(){
+                                                    Id = "id_01",
+                                                    Name = "name_01"
+                                            },
+                                        },
+                                        Degrees = new Degree[] {
+                                            new Degree()
+                                            {
+                                                InternalID = "id_00",
+                                                Name = "name_00"
+                                            },
+                                            new Degree()
+                                            {
+                                                InternalID = "id_01",
+                                                Name = "name_01"
+                                            }
+                                        }
+                                    },
+                                    new Course()
+                                    {
+                                        InternalID = "id_01",
+                                        Concepts = new Concept[] {
+                                            new Concept(){
+                                                    Id = "id_00",
+                                                    Name = "name_00"
+                                            },
+                                            new Concept(){
+                                                    Id = "id_01",
+                                                    Name = "name_01"
+                                            },
+                                        },
+                                        Degrees = new Degree[] {
+                                            new Degree()
+                                            {
+                                                InternalID = "id_00",
+                                                Name = "name_00"
+                                            },
+                                            new Degree()
+                                            {
+                                                InternalID = "id_01",
+                                                Name = "name_01"
+                                            }
+                                        }
+                                    },
                                 }
+                              }
             },
             new Teaching
             {
@@ -64,8 +117,61 @@ namespace uminho.api_investigacao.pub.Controllers
                                              Name = "name_01"
                                         },
                                     },
-                                    Courses = Array.Empty<Course>()
+                                    Courses = new Course[] {
+                                        new Course() {
+                                        InternalID = "id_00",
+                                        Name = "name_00",
+                                        Concepts = new Concept[] {
+                                            new Concept(){
+                                                    Id = "id_00",
+                                                    Name = "name_00"
+                                            },
+                                            new Concept(){
+                                                    Id = "id_01",
+                                                    Name = "name_01"
+                                            },
+                                        },
+                                        Degrees = new Degree[] {
+                                            new Degree()
+                                            {
+                                                InternalID = "id_00",
+                                                Name = "name_00"
+                                            },
+                                            new Degree()
+                                            {
+                                                InternalID = "id_01",
+                                                Name = "name_01"
+                                            }
+                                        }
+                                    },
+                                    new Course()
+                                    {
+                                        InternalID = "id_01",
+                                        Concepts = new Concept[] {
+                                            new Concept(){
+                                                    Id = "id_00",
+                                                    Name = "name_00"
+                                            },
+                                            new Concept(){
+                                                    Id = "id_01",
+                                                    Name = "name_01"
+                                            },
+                                        },
+                                        Degrees = new Degree[] {
+                                            new Degree()
+                                            {
+                                                InternalID = "id_00",
+                                                Name = "name_00"
+                                            },
+                                            new Degree()
+                                            {
+                                                InternalID = "id_01",
+                                                Name = "name_01"
+                                            }
+                                        }
+                                    },
                                 }
+                             }
             },
         };
 
@@ -86,8 +192,70 @@ namespace uminho.api_investigacao.pub.Controllers
            {
                InternalID = "id_00",
                Name = "name_00",
-               Concepts= Array.Empty<Concept>(),
-               Courses= Array.Empty<Course>()
+                Concepts = new Concept[] {
+                    new Concept(){
+                         Id = "id_00",
+                         Name = "name_00"
+                    },
+                    new Concept(){
+                         Id = "id_01",
+                         Name = "name_01"
+                    },
+                },
+               Courses = new Course[] {
+                                        new Course() {
+                                        InternalID = "id_00",
+                                        Name = "name_00",
+                                        Concepts = new Concept[] {
+                                            new Concept(){
+                                                    Id = "id_00",
+                                                    Name = "name_00"
+                                            },
+                                            new Concept(){
+                                                    Id = "id_01",
+                                                    Name = "name_01"
+                                            },
+                                        },
+                                        Degrees = new Degree[] {
+                                            new Degree()
+                                            {
+                                                InternalID = "id_00",
+                                                Name = "name_00"
+                                            },
+                                            new Degree()
+                                            {
+                                                InternalID = "id_01",
+                                                Name = "name_01"
+                                            }
+                                        }
+                                    },
+                                    new Course()
+                                    {
+                                        InternalID = "id_01",
+                                        Concepts = new Concept[] {
+                                            new Concept(){
+                                                    Id = "id_00",
+                                                    Name = "name_00"
+                                            },
+                                            new Concept(){
+                                                    Id = "id_01",
+                                                    Name = "name_01"
+                                            },
+                                        },
+                                        Degrees = new Degree[] {
+                                            new Degree()
+                                            {
+                                                InternalID = "id_00",
+                                                Name = "name_00"
+                                            },
+                                            new Degree()
+                                            {
+                                                InternalID = "id_01",
+                                                Name = "name_01"
+                                            }
+                                        }
+                                    },
+                                }
            },
            new CurricularUnit
            {
@@ -103,7 +271,60 @@ namespace uminho.api_investigacao.pub.Controllers
                          Name = "name_01"
                     },
                 },
-               Courses= Array.Empty<Course>()
+               Courses = new Course[] {
+                                        new Course() {
+                                        InternalID = "id_00",
+                                        Name = "name_00",
+                                        Concepts = new Concept[] {
+                                            new Concept(){
+                                                    Id = "id_00",
+                                                    Name = "name_00"
+                                            },
+                                            new Concept(){
+                                                    Id = "id_01",
+                                                    Name = "name_01"
+                                            },
+                                        },
+                                        Degrees = new Degree[] {
+                                            new Degree()
+                                            {
+                                                InternalID = "id_00",
+                                                Name = "name_00"
+                                            },
+                                            new Degree()
+                                            {
+                                                InternalID = "id_01",
+                                                Name = "name_01"
+                                            }
+                                        }
+                                    },
+                                    new Course()
+                                    {
+                                        InternalID = "id_01",
+                                        Concepts = new Concept[] {
+                                            new Concept(){
+                                                    Id = "id_00",
+                                                    Name = "name_00"
+                                            },
+                                            new Concept(){
+                                                    Id = "id_01",
+                                                    Name = "name_01"
+                                            },
+                                        },
+                                        Degrees = new Degree[] {
+                                            new Degree()
+                                            {
+                                                InternalID = "id_00",
+                                                Name = "name_00"
+                                            },
+                                            new Degree()
+                                            {
+                                                InternalID = "id_01",
+                                                Name = "name_01"
+                                            }
+                                        }
+                                    },
+                                }
            },
            new CurricularUnit
            {
@@ -119,7 +340,60 @@ namespace uminho.api_investigacao.pub.Controllers
                          Name = "name_01"
                     },
                 },
-               Courses= Array.Empty<Course>()
+                Courses = new Course[] {
+                        new Course() {
+                        InternalID = "id_00",
+                        Name = "name_00",
+                        Concepts = new Concept[] {
+                            new Concept(){
+                                    Id = "id_00",
+                                    Name = "name_00"
+                            },
+                            new Concept(){
+                                    Id = "id_01",
+                                    Name = "name_01"
+                            },
+                        },
+                        Degrees = new Degree[] {
+                            new Degree()
+                            {
+                                InternalID = "id_00",
+                                Name = "name_00"
+                            },
+                            new Degree()
+                            {
+                                InternalID = "id_01",
+                                Name = "name_01"
+                            }
+                        }
+                    },
+                    new Course()
+                    {
+                        InternalID = "id_01",
+                        Concepts = new Concept[] {
+                            new Concept(){
+                                    Id = "id_00",
+                                    Name = "name_00"
+                            },
+                            new Concept(){
+                                    Id = "id_01",
+                                    Name = "name_01"
+                            },
+                        },
+                        Degrees = new Degree[] {
+                            new Degree()
+                            {
+                                InternalID = "id_00",
+                                Name = "name_00"
+                            },
+                            new Degree()
+                            {
+                                InternalID = "id_01",
+                                Name = "name_01"
+                            }
+                        }
+                    },
+                }
            }
        };
 
@@ -140,21 +414,21 @@ namespace uminho.api_investigacao.pub.Controllers
         AllowAnonymous]
         public IEnumerable<Concept> GetAllConcepts() => new Concept[]
         {
-                new Concept
-                {
-                    Id = "id_00",
-                    Name = "name_00",
-                },
-                new Concept
-                {
-                    Id = "id_01",
-                    Name = "name_01",
-                },
-                new Concept
-                {
-                    Id = "id_02",
-                    Name = "name_02",
-                }
+            new Concept
+            {
+                Id = "id_00",
+                Name = "name_00",
+            },
+            new Concept
+            {
+                Id = "id_01",
+                Name = "name_01",
+            },
+            new Concept
+            {
+                Id = "id_02",
+                Name = "name_02",
+            }
         };
 
 
@@ -192,7 +466,60 @@ namespace uminho.api_investigacao.pub.Controllers
                                              Name = "name_01"
                                         },
                                     },
-                                    Courses = Array.Empty<Course>()
+                                    Courses = new Course[] {
+                                        new Course() {
+                                        InternalID = "id_00",
+                                        Name = "name_00",
+                                        Concepts = new Concept[] {
+                                            new Concept(){
+                                                    Id = "id_00",
+                                                    Name = "name_00"
+                                            },
+                                            new Concept(){
+                                                    Id = "id_01",
+                                                    Name = "name_01"
+                                            },
+                                        },
+                                        Degrees = new Degree[] {
+                                            new Degree()
+                                            {
+                                                InternalID = "id_00",
+                                                Name = "name_00"
+                                            },
+                                            new Degree()
+                                            {
+                                                InternalID = "id_01",
+                                                Name = "name_01"
+                                            }
+                                        }
+                                    },
+                                    new Course()
+                                    {
+                                        InternalID = "id_01",
+                                        Concepts = new Concept[] {
+                                            new Concept(){
+                                                    Id = "id_00",
+                                                    Name = "name_00"
+                                            },
+                                            new Concept(){
+                                                    Id = "id_01",
+                                                    Name = "name_01"
+                                            },
+                                        },
+                                        Degrees = new Degree[] {
+                                            new Degree()
+                                            {
+                                                InternalID = "id_00",
+                                                Name = "name_00"
+                                            },
+                                            new Degree()
+                                            {
+                                                InternalID = "id_01",
+                                                Name = "name_01"
+                                            }
+                                        }
+                                    },
+                                }
                                 },
                 CurricularUnitInternalId = "id_00"
             },
@@ -213,8 +540,61 @@ namespace uminho.api_investigacao.pub.Controllers
                                              Name = "name_01"
                                         },
                                     },
-                                    Courses = Array.Empty<Course>()
-                                },
+                                    Courses = new Course[] {
+                                        new Course() {
+                                        InternalID = "id_00",
+                                        Name = "name_00",
+                                        Concepts = new Concept[] {
+                                            new Concept(){
+                                                    Id = "id_00",
+                                                    Name = "name_00"
+                                            },
+                                            new Concept(){
+                                                    Id = "id_01",
+                                                    Name = "name_01"
+                                            },
+                                        },
+                                        Degrees = new Degree[] {
+                                            new Degree()
+                                            {
+                                                InternalID = "id_00",
+                                                Name = "name_00"
+                                            },
+                                            new Degree()
+                                            {
+                                                InternalID = "id_01",
+                                                Name = "name_01"
+                                            }
+                                        }
+                                    },
+                                    new Course()
+                                    {
+                                        InternalID = "id_01",
+                                        Concepts = new Concept[] {
+                                            new Concept(){
+                                                    Id = "id_00",
+                                                    Name = "name_00"
+                                            },
+                                            new Concept(){
+                                                    Id = "id_01",
+                                                    Name = "name_01"
+                                            },
+                                        },
+                                        Degrees = new Degree[] {
+                                            new Degree()
+                                            {
+                                                InternalID = "id_00",
+                                                Name = "name_00"
+                                            },
+                                            new Degree()
+                                            {
+                                                InternalID = "id_01",
+                                                Name = "name_01"
+                                            }
+                                        }
+                                    },
+                                }
+                            },
                 CurricularUnitInternalId = "id_01"
             },
         };
@@ -326,6 +706,73 @@ namespace uminho.api_investigacao.pub.Controllers
                         || name.IsEqual(t0.Name))
               select t0);
 
+
+        [HttpGet("degree/all"),
+         AllowAnonymous]
+        public IEnumerable<Degree> GetAllDegree() => new Degree[]
+        {
+            new Degree()
+            {
+                InternalID = "id_00",
+                Name = "name_00"
+            },
+            new Degree()
+            {
+                InternalID = "id_01",
+                Name = "name_01"
+            }
+        };
+
+        [HttpGet("degree"),
+        AllowAnonymous]
+        public IEnumerable<Degree> GetDegree(
+                [FromQuery] string? iD,
+                [FromQuery] string? name
+          )
+          => (from t0 in this.GetAllDegree()
+              where (iD.IsEqual(t0.InternalID)
+                        || name.IsEqual(t0.Name))
+              select t0);
+
+        [HttpGet("advising/all"),
+         AllowAnonymous]
+        public IEnumerable<Advising> GetAllAdvising() => new Advising[]
+        {
+            new Advising()
+            {
+                AdvisingroleID = "id_00",
+                AdvisingroleName = "roleName_00",
+                AdviseName = "name_00",
+                AdviseID = "id_00",
+                Persons = new Person[]
+                {
+                    new Person()
+                    {
+
+                    },
+                    new Person()
+                    {
+
+                    }
+                },
+                Start = "01-01-1900",
+                End = "01-01-2999",
+                Degree= new Degree() {
+                             InternalID = "id_00",
+                             Name = "name_00"
+                        },
+                CourseName = "name_00"
+                CourseID = "id_00",
+            }
+        };
+
+        [HttpGet("advising"), AllowAnonymous]
+        public IEnumerable<Advising> GetAdvising(
+            [FromQuery] string? Id,
+            [FromQuery] string? name) => (from t0 in this.GetAllAdvising()
+                                          where (Id.IsEqual(t0.AdviseID)
+                                                    || name.IsEqual(t0.AdviseName))
+                                          select t0);
 
         #endregion
     }
