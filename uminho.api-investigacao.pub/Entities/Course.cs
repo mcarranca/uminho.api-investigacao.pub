@@ -14,7 +14,7 @@ namespace uminho.api_investigacao.pub.Entities {
         public IEnumerable<Concept>? Concepts { get; set; }
 
         [JsonPropertyName("degrees")]
-        public IEnumerable<Course>? Degrees { get; set; }
+        public IEnumerable<Degree>? Degrees { get; set; }
 
     }
 }

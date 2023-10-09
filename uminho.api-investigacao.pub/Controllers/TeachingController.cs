@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.Identity.Web.Resource;
 using System;
 using System.Reflection.Emit;
@@ -34,7 +35,15 @@ namespace uminho.api_investigacao.pub.Controllers
                 CurricularUnit = new CurricularUnit {
                                     InternalID = "internalID_00",
                                     Name= "name_00",
-                                    Concepts = Array.Empty<Concept>(),
+                                    Concepts = new Concept[] {
+                                        new Concept() {
+                                            Id = "id_00",
+                                            Name = "name_00" },
+                                        new Concept() {
+                                            Id = "id_01",
+                                            Name = "name_01"
+                                        }
+                                    },
                                     Courses = Array.Empty<Course>()
                                 }
             },
@@ -45,7 +54,16 @@ namespace uminho.api_investigacao.pub.Controllers
                 CurricularUnit = new CurricularUnit {
                                     InternalID = "internalID_01",
                                     Name= "name_01",
-                                    Concepts = Array.Empty<Concept>(),
+                                     Concepts = new Concept[] {
+                                        new Concept(){
+                                             Id = "id_00",
+                                             Name = "name_00"
+                                        },
+                                        new Concept(){
+                                             Id = "id_01",
+                                             Name = "name_01"
+                                        },
+                                    },
                                     Courses = Array.Empty<Course>()
                                 }
             },
@@ -75,14 +93,32 @@ namespace uminho.api_investigacao.pub.Controllers
            {
                InternalID = "id_01",
                Name = "name_01",
-               Concepts= Array.Empty<Concept>(),
+                Concepts = new Concept[] {
+                    new Concept(){
+                         Id = "id_00",
+                         Name = "name_00"
+                    },
+                    new Concept(){
+                         Id = "id_01",
+                         Name = "name_01"
+                    },
+                },
                Courses= Array.Empty<Course>()
            },
            new CurricularUnit
            {
                InternalID = "id_02",
                Name = "name_02",
-               Concepts= Array.Empty<Concept>(),
+                Concepts = new Concept[] {
+                    new Concept(){
+                         Id = "id_00",
+                         Name = "name_00"
+                    },
+                    new Concept(){
+                         Id = "id_01",
+                         Name = "name_01"
+                    },
+                },
                Courses= Array.Empty<Course>()
            }
        };
@@ -102,7 +138,7 @@ namespace uminho.api_investigacao.pub.Controllers
 
         [HttpGet("concept/all"),
         AllowAnonymous]
-            public IEnumerable<Concept> GetAllConcepts() => new Concept[]
+        public IEnumerable<Concept> GetAllConcepts() => new Concept[]
         {
                 new Concept
                 {
@@ -138,7 +174,7 @@ namespace uminho.api_investigacao.pub.Controllers
         [HttpGet("teachingRoles/all"),
         AllowAnonymous]
         public IEnumerable<TeachingRoles> GetAllTeachingRoles() => new TeachingRoles[]
-{
+        {
             new TeachingRoles()
             {
                 Role = "role_00",
@@ -146,7 +182,16 @@ namespace uminho.api_investigacao.pub.Controllers
                 _CurricularUnit = new CurricularUnit {
                                     InternalID = "internalID_00",
                                     Name= "name_00",
-                                    Concepts = Array.Empty<Concept>(),
+                                     Concepts = new Concept[] {
+                                        new Concept(){
+                                             Id = "id_00",
+                                             Name = "name_00"
+                                        },
+                                        new Concept(){
+                                             Id = "id_01",
+                                             Name = "name_01"
+                                        },
+                                    },
                                     Courses = Array.Empty<Course>()
                                 },
                 CurricularUnitInternalId = "id_00"
@@ -158,14 +203,23 @@ namespace uminho.api_investigacao.pub.Controllers
                 _CurricularUnit = new CurricularUnit {
                                     InternalID = "internalID_01",
                                     Name= "name_01",
-                                    Concepts = Array.Empty<Concept>(),
+                                     Concepts = new Concept[] {
+                                        new Concept(){
+                                             Id = "id_00",
+                                             Name = "name_00"
+                                        },
+                                        new Concept(){
+                                             Id = "id_01",
+                                             Name = "name_01"
+                                        },
+                                    },
                                     Courses = Array.Empty<Course>()
                                 },
                 CurricularUnitInternalId = "id_01"
             },
-};
+        };
 
-        [HttpGet("TeachingRoles"),
+        [HttpGet("teachingRoles"),
           AllowAnonymous]
         public IEnumerable<TeachingRoles> GetTeachingRole(
           [FromQuery] string? roleID
@@ -173,6 +227,105 @@ namespace uminho.api_investigacao.pub.Controllers
             => (from t0 in this.GetAllTeachingRoles()
                 where (roleID.IsEqual(t0.Role))
                 select t0);
+
+
+        [HttpGet("course/all"),
+         AllowAnonymous]
+        public IEnumerable<Course> GetAllCourse() => new Course[]
+        {
+            new Course()
+            {
+                InternalID = "id_00",
+                Name = "name_00",
+                Concepts = new Concept[] {
+                    new Concept(){
+                         Id = "id_00",
+                         Name = "name_00"
+                    },
+                    new Concept(){
+                         Id = "id_01",
+                         Name = "name_01"
+                    },
+                },
+                Degrees = new Degree[] {
+                    new Degree()
+                    {
+                        InternalID = "id_00",
+                        Name = "name_00"
+                    },
+                    new Degree()
+                    {
+                        InternalID = "id_01",
+                        Name = "name_01"
+                    }
+                }
+            },
+            new Course()
+            {
+                InternalID = "id_01",
+                Concepts = new Concept[] {
+                    new Concept(){
+                         Id = "id_00",
+                         Name = "name_00"
+                    },
+                    new Concept(){
+                         Id = "id_01",
+                         Name = "name_01"
+                    },
+                },
+                Degrees = new Degree[] {
+                    new Degree()
+                    {
+                        InternalID = "id_00",
+                        Name = "name_00"
+                    },
+                    new Degree()
+                    {
+                        InternalID = "id_01",
+                        Name = "name_01"
+                    }
+                }
+            },
+            new Course()
+            {
+                InternalID = "id_02",
+                Name = "name_02",
+                Concepts = new Concept[] {
+                    new Concept(){
+                         Id = "id_00",
+                         Name = "name_00"
+                    },
+                    new Concept(){
+                         Id = "id_01",
+                         Name = "name_01"
+                    },
+                },
+                Degrees = new Degree[] {
+                    new Degree()
+                    {
+                        InternalID = "id_00",
+                        Name = "name_00"
+                    },
+                    new Degree()
+                    {
+                        InternalID = "id_01",
+                        Name = "name_01"
+                    }
+                }
+            }
+        };
+
+        [HttpGet("course"),
+        AllowAnonymous]
+        public IEnumerable<Course> GetCourse(
+                [FromQuery] string? iD,
+                [FromQuery] string? name
+          )
+          => (from t0 in this.GetAllCourse()
+              where (iD.IsEqual(t0.InternalID)
+                        || name.IsEqual(t0.Name))
+              select t0);
+
 
         #endregion
     }
