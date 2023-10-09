@@ -15,10 +15,10 @@ namespace uminho.api_investigacao.pub.Entities
         public string? Name { get; set; }
 
         [JsonPropertyName("concepts")]
-        public IEnumerable<Concept> Concepts { get; set; }
+        public IEnumerable<Concept>? Concepts { get; set; }
 
         [JsonPropertyName("courses")]
-        public IEnumerable<Course> Courses { get; set; }
+        public IEnumerable<Course>? Courses { get; set; }
 
 
     }

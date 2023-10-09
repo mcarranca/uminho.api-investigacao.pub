@@ -32,17 +32,17 @@ namespace uminho.api_investigacao.pub.Controllers
             {
                 Role = "role_00",
                 Period = "period_00",
-                _CurricularUnit = new CurricularUnit {
+                CurricularUnit = new CurricularUnit {
                                     InternalID = "internalID_00",
                                     Name= "name_00",
-                                    Concepts = new Concept[] { 
-                                        new Concept() { 
-                                            Id = "id_00", 
-                                            Name = "name_00" }, 
-                                        new Concept() { 
-                                            Id = "id_01", 
-                                            Name = "name_01" 
-                                        } 
+                                    Concepts = new Concept[] {
+                                        new Concept() {
+                                            Id = "id_00",
+                                            Name = "name_00" },
+                                        new Concept() {
+                                            Id = "id_01",
+                                            Name = "name_01"
+                                        }
                                     },
                                     Courses = Array.Empty<Course>()
                                 }
@@ -51,7 +51,7 @@ namespace uminho.api_investigacao.pub.Controllers
             {
                 Role = "role_01",
                 Period = "period_01",
-                _CurricularUnit = new CurricularUnit {
+                CurricularUnit = new CurricularUnit {
                                     InternalID = "internalID_01",
                                     Name= "name_01",
                                      Concepts = new Concept[] {

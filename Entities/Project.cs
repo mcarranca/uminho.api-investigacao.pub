@@ -49,7 +49,7 @@ namespace uminho.api_investigacao.pub.Entities {
         public string? PrincipalInvestigatorName { get; set; }
 
         [JsonPropertyName("Persons")]
-        public IEnumerable<Person> Persons { get; set; }
+        public IEnumerable<Person>? Persons { get; set; }
 
         [JsonPropertyName("start")]
         public string? Start { get; set; }
@@ -58,7 +58,7 @@ namespace uminho.api_investigacao.pub.Entities {
         public string? End { get; set; }
 
         [JsonPropertyName("concepts")]
-        public IEnumerable<Concept> Concepts { get; set; }
+        public IEnumerable<Concept>? Concepts { get; set; }
 
         [JsonPropertyName("fundingOrganization")]
         public string? FundingOrganization { get; set; }
