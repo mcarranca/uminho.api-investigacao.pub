@@ -2,9 +2,11 @@
 using Microsoft.AspNetCore.Mvc;
 using System;
 using uminho.api_investigacao.pub.Entities;
+using uminho.api_investigacao.pub.Framework;
 using static uminho.api_investigacao.pub.Entities.PersonEntity;
 
-namespace uminho.api_investigacao.pub.Controllers {
+namespace uminho.api_investigacao.pub.Controllers
+{
 
     [Authorize]
     [ApiController]

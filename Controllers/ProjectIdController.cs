@@ -2,8 +2,10 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Cryptography.Xml;
 using uminho.api_investigacao.pub.Entities;
+using uminho.api_investigacao.pub.Framework;
 
-namespace uminho.api_investigacao.pub.Controllers {
+namespace uminho.api_investigacao.pub.Controllers
+{
     [Authorize]
     [ApiController]
     //[Route("v1/[controller]")]

@@ -5,6 +5,7 @@ using Microsoft.Identity.Web.Resource;
 using System;
 using System.Reflection.Emit;
 using uminho.api_investigacao.pub.Entities;
+using uminho.api_investigacao.pub.Framework;
 
 namespace uminho.api_investigacao.pub.Controllers
 {

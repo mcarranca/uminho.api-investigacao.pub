@@ -9,6 +9,9 @@ using System.Reflection;
 var builder = WebApplication.CreateBuilder(args);
 var services = builder.Services;
 
+// get Settings
+//var settings = builder.Configuration.GetSection("Settings").Get<Settings>();
+
 // Add services to the container.
 services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer();
@@ -73,6 +76,7 @@ services.AddSwaggerGen(c =>
 services.AddMvc();
 
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
