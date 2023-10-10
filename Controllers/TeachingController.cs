@@ -1,24 +1,17 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Formatters;
-using Microsoft.Identity.Web.Resource;
-using System;
-using System.Reflection.Emit;
 using uminho.api_investigacao.pub.Entities;
 using uminho.api_investigacao.pub.Framework;
 
-namespace uminho.api_investigacao.pub.Controllers
-{
+namespace uminho.api_investigacao.pub.Controllers {
     [Authorize]
     [ApiController]
     //[Route("v1/[controller]")]
     [Route("v1")]
     //[RequiredScope(RequiredScopesConfigurationKey = "AzureAd:Scopes")]
-    public class TeachingController : BaseController<TeachingController>
-    {
+    public class TeachingController : BaseController<TeachingController> {
         #region .ctor
-        public TeachingController(ILogger<TeachingController> logger) : base(logger)
-        {
+        public TeachingController(ILogger<TeachingController> logger) : base(logger) {
 
         }
         #endregion
@@ -181,9 +174,9 @@ namespace uminho.api_investigacao.pub.Controllers
         public IEnumerable<TeachingEntity> GetTeaching(
           [FromQuery] string? roleID
             )
-            => (from t0 in this.GetAllTeaching()
-                where (roleID.IsEqual(t0.Role))
-                select t0);
+            => from t0 in GetAllTeaching()
+               where roleID.IsEqual(t0.Role)
+               select t0;
 
         [HttpGet("curricularUnit/all"),
        AllowAnonymous]
@@ -405,11 +398,11 @@ namespace uminho.api_investigacao.pub.Controllers
           [FromQuery] string? internalID,
           [FromQuery] string? name
             )
-            => (from t0 in this.GetAllCurricularUnit()
-                where (internalID.IsEqual(t0.InternalID)
-                         || name.IsEqual(t0.Name)
-                      )
-                select t0);
+            => from t0 in GetAllCurricularUnit()
+               where internalID.IsEqual(t0.InternalID)
+                        || name.IsEqual(t0.Name)
+
+               select t0;
 
         [HttpGet("concept/all"),
         AllowAnonymous]
@@ -439,11 +432,11 @@ namespace uminho.api_investigacao.pub.Controllers
           [FromQuery] string? id,
           [FromQuery] string? name
             )
-            => (from t0 in this.GetAllConcepts()
-                where (id.IsEqual(t0.Id)
-                         || name.IsEqual(t0.Name)
-                      )
-                select t0);
+            => from t0 in GetAllConcepts()
+               where id.IsEqual(t0.Id)
+                        || name.IsEqual(t0.Name)
+
+               select t0;
 
 
         [HttpGet("teachingRoles/all"),
@@ -605,9 +598,9 @@ namespace uminho.api_investigacao.pub.Controllers
         public IEnumerable<TeachingRoleEntity> GetTeachingRole(
           [FromQuery] string? roleID
             )
-            => (from t0 in this.GetAllTeachingRoles()
-                where (roleID.IsEqual(t0.Role))
-                select t0);
+            => from t0 in GetAllTeachingRoles()
+               where roleID.IsEqual(t0.Role)
+               select t0;
 
 
         [HttpGet("course/all"),
@@ -702,10 +695,10 @@ namespace uminho.api_investigacao.pub.Controllers
                 [FromQuery] string? iD,
                 [FromQuery] string? name
           )
-          => (from t0 in this.GetAllCourse()
-              where (iD.IsEqual(t0.InternalID)
-                        || name.IsEqual(t0.Name))
-              select t0);
+          => from t0 in GetAllCourse()
+             where iD.IsEqual(t0.InternalID)
+                       || name.IsEqual(t0.Name)
+             select t0;
 
 
         [HttpGet("degree/all"),
@@ -730,10 +723,10 @@ namespace uminho.api_investigacao.pub.Controllers
                 [FromQuery] string? iD,
                 [FromQuery] string? name
           )
-          => (from t0 in this.GetAllDegree()
-              where (iD.IsEqual(t0.InternalID)
-                        || name.IsEqual(t0.Name))
-              select t0);
+          => from t0 in GetAllDegree()
+             where iD.IsEqual(t0.InternalID)
+                       || name.IsEqual(t0.Name)
+             select t0;
 
         [HttpGet("advising/all"),
          AllowAnonymous]
@@ -770,10 +763,10 @@ namespace uminho.api_investigacao.pub.Controllers
         [HttpGet("advising"), AllowAnonymous]
         public IEnumerable<AdvisingEntity> GetAdvising(
             [FromQuery] string? Id,
-            [FromQuery] string? name) => (from t0 in this.GetAllAdvising()
-                                          where (Id.IsEqual(t0.AdviseID)
-                                                    || name.IsEqual(t0.AdviseName))
-                                          select t0);
+            [FromQuery] string? name) => from t0 in GetAllAdvising()
+                                         where Id.IsEqual(t0.AdviseID)
+                                                   || name.IsEqual(t0.AdviseName)
+                                         select t0;
 
         #endregion
     }

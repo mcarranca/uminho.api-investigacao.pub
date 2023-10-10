@@ -1,17 +1,14 @@
-﻿using System.Data;
-using System.Text.Json.Serialization;
+﻿using System.Text.Json.Serialization;
 
-namespace uminho.api_investigacao.pub.Entities
-{
+namespace uminho.api_investigacao.pub.Entities {
     //TODO: Teaching e TeachingRoles são iguais
     [Serializable,
     JsonSerializable(typeof(TeachingEntity), TypeInfoPropertyName = "teaching")]
- 
-    public class TeachingEntity
-    {
+
+    public class TeachingEntity {
         [JsonPropertyName("role")]
         public string? Role { get; set; }
-        
+
         [JsonPropertyName("curricularUnitInternalId")]
         public string? CurricularUnitInternalId { get; set; }
 

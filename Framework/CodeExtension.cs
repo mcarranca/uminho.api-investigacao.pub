@@ -1,5 +1,4 @@
 ﻿using System.Drawing;
-using System.Drawing.Imaging;
 
 namespace uminho.api_investigacao.pub.Framework {
     public static class CodeExtension {
@@ -33,8 +32,8 @@ namespace uminho.api_investigacao.pub.Framework {
         /// </summary>
         /// <param name="dateTime"></param>
         /// <returns></returns>
-        public static DateTime? ToDateTime(string dateTime) => 
-            DateTime.TryParse(dateTime, out var outDateTime)
+        public static DateTime? ToDateTime(string dateTime) =>
+            DateTime.TryParse(dateTime, out DateTime outDateTime)
                 ? outDateTime
                 : null;
 

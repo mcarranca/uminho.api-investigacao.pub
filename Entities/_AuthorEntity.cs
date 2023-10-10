@@ -2,8 +2,8 @@
 
 namespace uminho.api_investigacao.pub.Entities {
     [Serializable,
-        JsonSerializable(typeof(Author), TypeInfoPropertyName = "author")]
-    public class Author {
+        JsonSerializable(typeof(AuthorEntity), TypeInfoPropertyName = "author")]
+    public class AuthorEntity {
         // TODO: fill with properties
     }
 }

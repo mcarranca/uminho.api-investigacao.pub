@@ -1,11 +1,9 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace uminho.api_investigacao.pub.Entities
-{
+namespace uminho.api_investigacao.pub.Entities {
     [Serializable,
         JsonSerializable(typeof(JournalEntity), TypeInfoPropertyName = "journal")]
-    public class JournalEntity
-    {
+    public class JournalEntity {
         #region Property members
 
         [JsonPropertyName("name")]

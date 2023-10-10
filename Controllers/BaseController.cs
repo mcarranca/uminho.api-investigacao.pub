@@ -1,7 +1,5 @@
-﻿namespace uminho.api_investigacao.pub.Controllers
-{
-    public abstract class BaseController<T>
-    {
+﻿namespace uminho.api_investigacao.pub.Controllers {
+    public abstract class BaseController<T> {
         #region Field members
 
         private ILogger<T> _logger;
@@ -11,11 +9,10 @@
 
         #region .ctor
 
-        public BaseController(ILogger<T> logger)
-        {
+        public BaseController(ILogger<T> logger) {
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
-            
-            this.Logger.LogInformation($"{typeof(T).FullName}");
+
+            Logger.LogInformation($"{typeof(T).FullName}");
         }
 
         #endregion

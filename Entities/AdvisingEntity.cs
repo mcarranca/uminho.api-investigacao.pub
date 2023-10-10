@@ -1,12 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Text.Json.Serialization;
+﻿using System.Text.Json.Serialization;
 
-namespace uminho.api_investigacao.pub.Entities
-{
+namespace uminho.api_investigacao.pub.Entities {
     [Serializable,
    JsonSerializable(typeof(AdvisingEntity), TypeInfoPropertyName = "advising")]
-    public class AdvisingEntity
-    {
+    public class AdvisingEntity {
         [JsonPropertyName("AdvisingroleID")]
         public string? AdvisingroleID { get; set; }
         [JsonPropertyName("AvisingroleName ")]
@@ -15,7 +12,7 @@ namespace uminho.api_investigacao.pub.Entities
         public string? AdviseName { get; set; }
         [JsonPropertyName("AdviseID")]
         public string? AdviseID { get; set; }
-        [JsonPropertyName("persons")] 
+        [JsonPropertyName("persons")]
         public IEnumerable<PersonEntity>? Persons { get; set; }
         [JsonPropertyName("start")]
         public string? Start { get; set; }

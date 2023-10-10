@@ -1,11 +1,9 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.Security.Cryptography.Xml;
 using uminho.api_investigacao.pub.Entities;
 using uminho.api_investigacao.pub.Framework;
 
-namespace uminho.api_investigacao.pub.Controllers
-{
+namespace uminho.api_investigacao.pub.Controllers {
     [Authorize]
     [ApiController]
     //[Route("v1/[controller]")]
@@ -109,25 +107,25 @@ namespace uminho.api_investigacao.pub.Controllers
             [FromQuery] string? sponsorAwardId,
             [FromQuery] string? start,
             [FromQuery] string? totalAwardAmount
-            ) => (from t0 in this.GetAllProjectIds()
-                  where (
-                    @abstract.IsEqual(t0.Abstract)
-                  || end.IsEqual(t0.End)
-                  || fundingOrganization.IsEqual(t0.FundingOrganization)
-                  || grantDirectCosts.IsEqual(t0.GrantDirectCosts)
-                  || id.IsEqual(t0.ID)
-                  || localAwardId.IsEqual(t0.LocalAwardId)
-                  || name.IsEqual(t0.Name)
-                  || organizationInternalId.IsEqual(t0.OrganizationInternalId)
-                  || organizationRingoldId.IsEqual(t0.OrganizationRingoldId)
-                  || principalInternalID.IsEqual(t0.PrincipalInternalID)
-                  || principalInvestigatorName.IsEqual(t0.PrincipalInvestigatorName)
-                  || reference.IsEqual(t0.Reference)
-                  || sponsorAwardId.IsEqual(t0.SponsorAwardId)
-                  || start.IsEqual(t0.Start)
-                  || totalAwardAmount.IsEqual(t0.TotalAwardAmount)
-                  )
-                  select t0);
+            ) => from t0 in GetAllProjectIds()
+                 where
+                   @abstract.IsEqual(t0.Abstract)
+                 || end.IsEqual(t0.End)
+                 || fundingOrganization.IsEqual(t0.FundingOrganization)
+                 || grantDirectCosts.IsEqual(t0.GrantDirectCosts)
+                 || id.IsEqual(t0.ID)
+                 || localAwardId.IsEqual(t0.LocalAwardId)
+                 || name.IsEqual(t0.Name)
+                 || organizationInternalId.IsEqual(t0.OrganizationInternalId)
+                 || organizationRingoldId.IsEqual(t0.OrganizationRingoldId)
+                 || principalInternalID.IsEqual(t0.PrincipalInternalID)
+                 || principalInvestigatorName.IsEqual(t0.PrincipalInvestigatorName)
+                 || reference.IsEqual(t0.Reference)
+                 || sponsorAwardId.IsEqual(t0.SponsorAwardId)
+                 || start.IsEqual(t0.Start)
+                 || totalAwardAmount.IsEqual(t0.TotalAwardAmount)
+
+                 select t0;
 
 
         #endregion

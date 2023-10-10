@@ -1,11 +1,9 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace uminho.api_investigacao.pub.Entities
-{
+namespace uminho.api_investigacao.pub.Entities {
     [Serializable,
     JsonSerializable(typeof(DegreeEntity), TypeInfoPropertyName = "degree")]
-    public class DegreeEntity
-    {
+    public class DegreeEntity {
         [JsonPropertyName("internalID")]
         public string? InternalID { get; set; }
 

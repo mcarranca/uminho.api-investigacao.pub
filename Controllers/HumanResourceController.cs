@@ -1,12 +1,9 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using uminho.api_investigacao.pub.Entities;
 using uminho.api_investigacao.pub.Framework;
-using static uminho.api_investigacao.pub.Entities.PersonEntity;
 
-namespace uminho.api_investigacao.pub.Controllers
-{
+namespace uminho.api_investigacao.pub.Controllers {
 
     [Authorize]
     [ApiController]
@@ -89,20 +86,20 @@ namespace uminho.api_investigacao.pub.Controllers
             [FromQuery] string? organizationRinggoldId,
             [FromQuery] string? phone,
             [FromQuery] string? photo
-        ) => (from t0 in this.GetAllPersons()
-              where (
-                      internalID.IsEqual(t0.InternalID)
-              || additionalName.IsEqual(t0.AdditionalName)
-              || email.IsEqual(t0.Email)
-              || familyName.IsEqual(t0.FamilyName)
-              || givenName.IsEqual(t0.GivenName)
-              || name.IsEqual(t0.Name)
-              || organizationInternalId.IsEqual(t0.OrganizationInternalId)
-              || organizationRinggoldId.IsEqual(t0.OrganizationRinggoldId)
-              || phone.IsEqual(t0.Phone)
-              || photo.IsEqual(t0.Photo)
-                      )
-              select t0);
+        ) => from t0 in GetAllPersons()
+             where
+                     internalID.IsEqual(t0.InternalID)
+             || additionalName.IsEqual(t0.AdditionalName)
+             || email.IsEqual(t0.Email)
+             || familyName.IsEqual(t0.FamilyName)
+             || givenName.IsEqual(t0.GivenName)
+             || name.IsEqual(t0.Name)
+             || organizationInternalId.IsEqual(t0.OrganizationInternalId)
+             || organizationRinggoldId.IsEqual(t0.OrganizationRinggoldId)
+             || phone.IsEqual(t0.Phone)
+             || photo.IsEqual(t0.Photo)
+
+             select t0;
 
         [HttpGet("person/position/all"),
             AllowAnonymous]
@@ -130,11 +127,11 @@ namespace uminho.api_investigacao.pub.Controllers
         AllowAnonymous]
         public IEnumerable<PersonEntity.PositionEntity> GetPersonPositions(
             string? internalD
-        ) => (from t0 in this.GetAllPersonPositions()
-              where (
-                      internalD.IsEqual(t0.ID)
-                      )
-              select t0);
+        ) => from t0 in GetAllPersonPositions()
+             where
+                     internalD.IsEqual(t0.ID)
+
+             select t0;
 
         [HttpGet("person/concept/all"),
             AllowAnonymous]
@@ -160,11 +157,11 @@ namespace uminho.api_investigacao.pub.Controllers
         AllowAnonymous]
         public IEnumerable<PersonEntity.ConceptEntity> GetPersonConceptsByID(
             string? internalD
-        ) => (from t0 in this.GetAllPersonConcepts()
-              where (
-                      internalD.IsEqual(t0.ID)
-                      )
-              select t0);
+        ) => from t0 in GetAllPersonConcepts()
+             where
+                     internalD.IsEqual(t0.ID)
+
+             select t0;
 
         [HttpGet("person/concept"),
         AllowAnonymous]
@@ -172,13 +169,13 @@ namespace uminho.api_investigacao.pub.Controllers
             [FromQuery] string? id,
             [FromQuery] string? name,
             [FromQuery] string? organizationId
-        ) => (from t0 in this.GetAllPersonConcepts()
-              where (
-                      id.IsEqual(t0.ID)
-              || name.IsEqual(t0.Name)
-              || organizationId.IsEqual(t0.OrganizationId)
-                      )
-              select t0);
+        ) => from t0 in GetAllPersonConcepts()
+             where
+                     id.IsEqual(t0.ID)
+             || name.IsEqual(t0.Name)
+             || organizationId.IsEqual(t0.OrganizationId)
+
+             select t0;
 
         [HttpGet("person/affiliation/all"),
             AllowAnonymous]
@@ -212,11 +209,11 @@ namespace uminho.api_investigacao.pub.Controllers
         AllowAnonymous]
         public IEnumerable<PersonEntity.AffiliationEntity> GetPersonAffiliationsByID(
             string? internalD
-        ) => (from t0 in this.GetAllPersonAffiliations()
-              where (
-                      internalD.IsEqual(t0.PositionID)
-                      )
-              select t0);
+        ) => from t0 in GetAllPersonAffiliations()
+             where
+                     internalD.IsEqual(t0.PositionID)
+
+             select t0;
 
         [HttpGet("person/id/all"),
         AllowAnonymous]
@@ -238,11 +235,11 @@ namespace uminho.api_investigacao.pub.Controllers
         AllowAnonymous]
         public IEnumerable<PersonEntity.IDEntity> GetIDsByID(
             string? internalD
-        ) => (from t0 in this.GetAllIDs()
-              where (
-                      internalD.IsEqual(t0.IDName)
-                      )
-              select t0);
+        ) => from t0 in GetAllIDs()
+             where
+                     internalD.IsEqual(t0.IDName)
+
+             select t0;
 
         [HttpGet("person/degree/all"),
         AllowAnonymous]
@@ -279,11 +276,11 @@ namespace uminho.api_investigacao.pub.Controllers
         AllowAnonymous]
         public IEnumerable<PersonEntity.DegreesEntity> GetDegreesByIDs(
             string? internalD
-        ) => (from t0 in this.GetAllDegrees()
-              where (
-                      internalD.IsEqual(t0.Degree)
-                      )
-              select t0);
+        ) => from t0 in GetAllDegrees()
+             where
+                     internalD.IsEqual(t0.Degree)
+
+             select t0;
 
         #endregion
     }

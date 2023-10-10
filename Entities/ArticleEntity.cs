@@ -1,11 +1,9 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace uminho.api_investigacao.pub.Entities
-{
-    [Serializable, 
+namespace uminho.api_investigacao.pub.Entities {
+    [Serializable,
         JsonSerializable(typeof(ArticleEntity), TypeInfoPropertyName = "article")]
-    public class ArticleEntity
-    {
+    public class ArticleEntity {
 
         #region Property members
 
@@ -49,7 +47,7 @@ namespace uminho.api_investigacao.pub.Entities
         public string? AuthorInternalId { get; set; }
 
         [JsonPropertyName("authors")]
-        public IEnumerable<Author>? Authors { get; set; }
+        public IEnumerable<AuthorEntity>? Authors { get; set; }
 
         [JsonPropertyName("authorGivenName")]
         public string? AuthorGivenName { get; set; }

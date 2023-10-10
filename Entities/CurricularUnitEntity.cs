@@ -1,12 +1,10 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace uminho.api_investigacao.pub.Entities
-{
+namespace uminho.api_investigacao.pub.Entities {
     [Serializable,
     JsonSerializable(typeof(CurricularUnitEntity), TypeInfoPropertyName = "curricularUnit")]
 
-    public class CurricularUnitEntity
-    {
+    public class CurricularUnitEntity {
 
         [JsonPropertyName("internalID")]
         public string? InternalID { get; set; }

@@ -2,8 +2,8 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.OpenApi.Models;
 using uminho.api_investigacao.pub.Setting;
 
-var builder = WebApplication.CreateBuilder(args);
-var services = builder.Services;
+WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
+IServiceCollection services = builder.Services;
 
 // ****************************************
 // settings
@@ -39,7 +39,7 @@ services.AddSwaggerGen(c => {
                 Url = string.IsNullOrWhiteSpace(Settings.SwaggerSetting?.ContactURL) ? null : new Uri(Settings.SwaggerSetting?.ContactURL ?? string.Empty),
             },
             TermsOfService = string.IsNullOrWhiteSpace(Settings.SwaggerSetting?.TermsOfService) ? null : new Uri(Settings.SwaggerSetting?.TermsOfService ?? string.Empty),
-        }) ;
+        });
 
     c.DocInclusionPredicate((name, api) => true);
 
@@ -91,7 +91,7 @@ services.AddSwaggerGen(c => {
 
 services.AddMvc();
 
-var app = builder.Build();
+WebApplication app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment()) {

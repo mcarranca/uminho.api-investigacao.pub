@@ -1,8 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
-using System.Net;
 using uminho.api_investigacao.pub.Entities;
 using uminho.api_investigacao.pub.Framework;
 
@@ -14,7 +11,7 @@ namespace uminho.api_investigacao.pub.Controllers {
         : BaseController<OrganizationController> {
 
         #region .ctor
-        public OrganizationController(ILogger<OrganizationController> logger) 
+        public OrganizationController(ILogger<OrganizationController> logger)
             : base(logger) {
         }
         #endregion
@@ -86,10 +83,10 @@ namespace uminho.api_investigacao.pub.Controllers {
         [HttpGet("organization"), AllowAnonymous]
         public IEnumerable<OrganizationEntity> GetOrganization(
           [FromQuery] string? internalD,
-          [FromQuery] string? name) => (from t0 in this.GetAllOrganization()
-                                        where (internalD.IsEqual(t0.InternalD)
-                                                  || name.IsEqual(t0.Name))
-                                        select t0);
+          [FromQuery] string? name) => from t0 in GetAllOrganization()
+                                       where internalD.IsEqual(t0.InternalD)
+                                                 || name.IsEqual(t0.Name)
+                                       select t0;
 
         #endregion
     }

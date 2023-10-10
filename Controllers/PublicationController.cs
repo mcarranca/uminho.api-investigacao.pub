@@ -1,8 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Identity.Web.Resource;
-using System;
-using System.Reflection.Emit;
 using uminho.api_investigacao.pub.Entities;
 using uminho.api_investigacao.pub.Framework;
 
@@ -110,26 +107,26 @@ public class PublicationController
         [FromQuery] string? publishDate,
         [FromQuery] string? startPage,
         [FromQuery] string? volume
-        ) => (from t0 in this.GetAllArticles()
-              where (
-                      @abstract.IsEqual(t0.Abstract)
-                      || authorFamilyName.IsEqual(t0.AuthorFamilyName)
-                      || authorGivenName.IsEqual(t0.AuthorGivenName)
-                      || authorInternalId.IsEqual(t0.AuthorInternalId)
-                      || authormIddleName.IsEqual(t0.AuthormIddleName)
-                      || authorshipRank.IsEqual(t0.AuthorshipRank)
-                      || concept.IsEqual(t0.Concept)
-                      || doi.IsEqual(t0.DOI)
-                      || endPage.IsEqual(t0.EndPage)
-                      || grant.IsEqual(t0.Grant)
-                      || issue.IsEqual(t0.Issue)
-                      || journal.IsEqual(t0.Journal)
-                      || label.IsEqual(t0.Label)
-                      || publishDate.IsEqual(t0.PublishDate)
-                      || startPage.IsEqual(t0.StartPage)
-                      || volume.IsEqual(t0.Volume)
-                      )
-              select t0);
+        ) => from t0 in GetAllArticles()
+             where
+                     @abstract.IsEqual(t0.Abstract)
+                     || authorFamilyName.IsEqual(t0.AuthorFamilyName)
+                     || authorGivenName.IsEqual(t0.AuthorGivenName)
+                     || authorInternalId.IsEqual(t0.AuthorInternalId)
+                     || authormIddleName.IsEqual(t0.AuthormIddleName)
+                     || authorshipRank.IsEqual(t0.AuthorshipRank)
+                     || concept.IsEqual(t0.Concept)
+                     || doi.IsEqual(t0.DOI)
+                     || endPage.IsEqual(t0.EndPage)
+                     || grant.IsEqual(t0.Grant)
+                     || issue.IsEqual(t0.Issue)
+                     || journal.IsEqual(t0.Journal)
+                     || label.IsEqual(t0.Label)
+                     || publishDate.IsEqual(t0.PublishDate)
+                     || startPage.IsEqual(t0.StartPage)
+                     || volume.IsEqual(t0.Volume)
+
+             select t0;
 
     [HttpGet("journal/all"),
         AllowAnonymous]
@@ -165,14 +162,14 @@ public class PublicationController
         [FromQuery] string? eissn,
         [FromQuery] string? issn,
         [FromQuery] string? name
-        ) => (from t0 in this.GetAllJournals()
-              where (
-                      abbreviation.IsEqual(t0.Abbreviation)
-                      || eissn.IsEqual(t0.EISSN)
-                      || issn.IsEqual(t0.ISSN)
-                      || name.IsEqual(t0.Name)
-                      )
-              select t0);
+        ) => from t0 in GetAllJournals()
+             where
+                     abbreviation.IsEqual(t0.Abbreviation)
+                     || eissn.IsEqual(t0.EISSN)
+                     || issn.IsEqual(t0.ISSN)
+                     || name.IsEqual(t0.Name)
+
+             select t0;
 
     [HttpGet("editor/all"),
         AllowAnonymous]
@@ -208,14 +205,14 @@ public class PublicationController
         [FromQuery] string? eissn,
         [FromQuery] string? issn,
         [FromQuery] string? name
-        ) => (from t0 in this.GetAllEditors()
-              where (
-                      abbreviation.IsEqual(t0.Abbreviation)
-                      || eissn.IsEqual(t0.EISSN)
-                      || issn.IsEqual(t0.ISSN)
-                      || name.IsEqual(t0.Name)
-                      )
-              select t0);
+        ) => from t0 in GetAllEditors()
+             where
+                     abbreviation.IsEqual(t0.Abbreviation)
+                     || eissn.IsEqual(t0.EISSN)
+                     || issn.IsEqual(t0.ISSN)
+                     || name.IsEqual(t0.Name)
+
+             select t0;
 
     #endregion
 }

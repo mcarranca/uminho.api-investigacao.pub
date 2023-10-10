@@ -31,7 +31,7 @@
         /// <summary>
         /// Swagger contact URL
         /// </summary>
-        public string? ContactURL { get; set;}
+        public string? ContactURL { get; set; }
 
         #endregion
 
