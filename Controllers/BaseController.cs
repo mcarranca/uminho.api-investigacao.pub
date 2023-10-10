@@ -13,7 +13,9 @@
 
         public BaseController(ILogger<T> logger)
         {
-            _logger = logger;
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+            
+            this.Logger.LogInformation($"{typeof(T).FullName}");
         }
 
         #endregion
