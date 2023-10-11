@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.OpenApi.Models;
+using uminho.api_investigacao.pub.DatabaseContext;
 using uminho.api_investigacao.pub.Setting;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
@@ -47,7 +48,7 @@ services.AddSwaggerGen(c => {
     //c.ResolveConflictingActions(apiDescriptions => apiDescriptions.First());  // <- avoid
     c.IgnoreObsoleteActions();
     c.IgnoreObsoleteProperties();
-    c.CustomSchemaIds(type => type.FullName);
+    c.CustomSchemaIds(type => type.FullName?.Replace("+", "."));
 
     // JWT authentication
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme {
@@ -80,7 +81,6 @@ services.AddSwaggerGen(c => {
 // ****************************************
 // logging settings
 // ****************************************
-
 //services.AddLogging();
 //builder.Logging.AddFilter();
 
@@ -90,6 +90,11 @@ services.AddSwaggerGen(c => {
 //services.AddScoped<ICache, MemoryCache>();
 
 services.AddMvc();
+
+// ****************************************
+// database contexts
+// ****************************************
+builder.Services.LoadDbContexts();
 
 WebApplication app = builder.Build();
 
@@ -104,6 +109,7 @@ app.UseAuthentication();
 app.UseAuthorization();
 app.UseStaticFiles();
 app.MapControllers();
+
 //app.MapGet("/", () => "Hello World!");
 
 

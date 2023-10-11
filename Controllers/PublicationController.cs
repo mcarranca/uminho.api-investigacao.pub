@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using uminho.api_investigacao.pub.DatabaseContext;
 using uminho.api_investigacao.pub.Entities;
 using uminho.api_investigacao.pub.Framework;
 
@@ -10,12 +11,12 @@ namespace uminho.api_investigacao.pub.Controllers;
 [Route("v1")]
 //[RequiredScope(RequiredScopesConfigurationKey = "AzureAd:Scopes")]
 public class PublicationController
-    : BaseController<PublicationController> {
+    : BaseController<PublicationController, PublicacoesDBContext> {
 
     #region .ctor
 
-    public PublicationController(ILogger<PublicationController> logger)
-        : base(logger) {
+    public PublicationController(ILogger<PublicationController> logger, PublicacoesDBContext publicacoesDBContext)
+        : base(logger, publicacoesDBContext) {
     }
 
     #endregion
@@ -24,69 +25,91 @@ public class PublicationController
 
     [HttpGet("article/all"),
         AllowAnonymous]
-    public IEnumerable<ArticleEntity> GetAllArticles() => new ArticleEntity[]
-        {
-            new ArticleEntity()
-            {
-                Abstract = "abstract_00",
-                AuthorFamilyName = "authorFamilyName_00",
-                AuthorGivenName = "authorGivenName_00",
-                AuthorInternalId = "authorInternalId_00",
-                AuthormIddleName = "authormIddleName_00",
-                Authors = {},
-                AuthorshipRank = "authorshipRank_00",
-                Concept = "concept_00",
-                DOI = "doi_00",
-                EndPage = "endPage_00",
-                Grant = "grant_00",
-                Issue = "issue_00",
-                Journal = "journal_00",
-                Label = "label_00",
-                PublishDate = "publishDate_00",
-                StartPage = "startPage_00",
-                Volume  = "volumne_00",
-            },
-            new ArticleEntity()
-            {
-                Abstract = "abstract_01",
-                AuthorFamilyName = "authorFamilyName_01",
-                AuthorGivenName = "authorGivenName_01",
-                AuthorInternalId = "authorInternalId_01",
-                AuthormIddleName = "authormIddleName_01",
-                Authors = {},
-                AuthorshipRank = "authorshipRank_01",
-                Concept = "concept_01",
-                DOI = "doi_01",
-                EndPage = "endPage_01",
-                Grant = "grant_01",
-                Issue = "issue_01",
-                Journal = "journal_01",
-                Label = "label_01",
-                PublishDate = "publishDate_01",
-                StartPage = "startPage_01",
-                Volume  = "volumne_01",
-            },
-            new ArticleEntity()
-            {
-                Abstract = "abstract_02",
-                AuthorFamilyName = "authorFamilyName_02",
-                AuthorGivenName = "authorGivenName_02",
-                AuthorInternalId = "authorInternalId_02",
-                AuthormIddleName = "authormIddleName_02",
-                Authors = {},
-                AuthorshipRank = "authorshipRank_02",
-                Concept = "concept_02",
-                DOI = "doi_02",
-                EndPage = "endPage_02",
-                Grant = "grant_02",
-                Issue = "issue_02",
-                Journal = "journal_02",
-                Label = "label_02",
-                PublishDate = "publishDate_02",
-                StartPage = "startPage_02",
-                Volume  = "volumne_02",
-            },
+    public IEnumerable<ArticleEntity> GetAllArticles() =>
+        from publicacoes in DbContext.Publicacoes
+        select new ArticleEntity {
+            //Abstract = "abstract_00",
+            //AuthorFamilyName = "authorFamilyName_00",
+            //AuthorGivenName = "authorGivenName_00",
+            //AuthorInternalId = "authorInternalId_00",
+            //AuthormIddleName = "authormIddleName_00",
+            //Authors = { },
+            //AuthorshipRank = "authorshipRank_00",
+            //Concept = "concept_00",
+            DOI = publicacoes.PRISM_doi,
+            EndPage = publicacoes.PRISM_pageRange,
+            //Grant = "grant_00",
+            Issue = publicacoes.PRISM_issueIdentifier,
+            //Journal = "journal_00",
+            //Label = "label_00",
+            PublishDate = publicacoes.PRISM_coverDate,
+            //StartPage = "startPage_00",
+            Volume = publicacoes.PRISM_volume,
         };
+
+    //new ArticleEntity[]
+    //{
+    //    new ArticleEntity()
+    //    {
+    //        Abstract = "abstract_00",
+    //        AuthorFamilyName = "authorFamilyName_00",
+    //        AuthorGivenName = "authorGivenName_00",
+    //        AuthorInternalId = "authorInternalId_00",
+    //        AuthormIddleName = "authormIddleName_00",
+    //        Authors = {},
+    //        AuthorshipRank = "authorshipRank_00",
+    //        Concept = "concept_00",
+    //        DOI = "doi_00",
+    //        EndPage = "endPage_00",
+    //        Grant = "grant_00",
+    //        Issue = "issue_00",
+    //        Journal = "journal_00",
+    //        Label = "label_00",
+    //        PublishDate = "publishDate_00",
+    //        StartPage = "startPage_00",
+    //        Volume  = "volumne_00",
+    //    },
+    //    new ArticleEntity()
+    //    {
+    //        Abstract = "abstract_01",
+    //        AuthorFamilyName = "authorFamilyName_01",
+    //        AuthorGivenName = "authorGivenName_01",
+    //        AuthorInternalId = "authorInternalId_01",
+    //        AuthormIddleName = "authormIddleName_01",
+    //        Authors = {},
+    //        AuthorshipRank = "authorshipRank_01",
+    //        Concept = "concept_01",
+    //        DOI = "doi_01",
+    //        EndPage = "endPage_01",
+    //        Grant = "grant_01",
+    //        Issue = "issue_01",
+    //        Journal = "journal_01",
+    //        Label = "label_01",
+    //        PublishDate = "publishDate_01",
+    //        StartPage = "startPage_01",
+    //        Volume  = "volumne_01",
+    //    },
+    //    new ArticleEntity()
+    //    {
+    //        Abstract = "abstract_02",
+    //        AuthorFamilyName = "authorFamilyName_02",
+    //        AuthorGivenName = "authorGivenName_02",
+    //        AuthorInternalId = "authorInternalId_02",
+    //        AuthormIddleName = "authormIddleName_02",
+    //        Authors = {},
+    //        AuthorshipRank = "authorshipRank_02",
+    //        Concept = "concept_02",
+    //        DOI = "doi_02",
+    //        EndPage = "endPage_02",
+    //        Grant = "grant_02",
+    //        Issue = "issue_02",
+    //        Journal = "journal_02",
+    //        Label = "label_02",
+    //        PublishDate = "publishDate_02",
+    //        StartPage = "startPage_02",
+    //        Volume  = "volumne_02",
+    //    },
+    //};
 
     [HttpGet("article"),
         AllowAnonymous]

@@ -1,6 +1,4 @@
-﻿using System.Drawing;
-
-namespace uminho.api_investigacao.pub.Framework {
+﻿namespace uminho.api_investigacao.pub.Framework {
     public static class CodeExtension {
 
         /// <summary>
@@ -38,26 +36,46 @@ namespace uminho.api_investigacao.pub.Framework {
                 : null;
 
         /// <summary>
-        /// Convert <paramref name="bitmap"/> to <see cref="System.String"/>
+        /// Convert <paramref name="array"/> to Base64>
         /// </summary>
-        /// <param name="bitmap"></param>
+        /// <param name="array"></param>
         /// <returns></returns>
-        public static string? FromImage(Bitmap bitmap) {
+        public static string? ToBase64(this byte[] array) {
             //var ms = new MemoryStream();
             //bitmap.Save(ms, ImageFormat.Jpeg);
             //var byteImage = ms.ToArray();
-            //var base64 = Convert.ToBase64String(byteImage);
+            string base64 = Convert.ToBase64String(array);
 
-            //return base64;
-            return null;
+            return base64;
         }
         /// <summary>
-        /// Convert <paramref name="bitmapBase64"/> to <see cref="System.Drawing.Bitmap"/>
+        /// Convert Base64 to <see cref="System.Byte[]"/>
         /// </summary>
-        /// <param name="bitmapBase64"></param>
+        /// <param name="base64"></param>
         /// <returns></returns>
-        public static Bitmap? ToImage(string? bitmapBase64) {
-            return null;
+        public static byte[] FromBase64(this string? base64) {
+            byte[] array = (base64 == null)
+                ? Array.Empty<byte>()
+                : Convert.FromBase64String(base64);
+
+            return array;
+        }
+
+        /// <summary>
+        /// Convert Base64 to image (<see cref="System.Byte[]"/>)
+        /// </summary>
+        /// <param name="base64"></param>
+        /// <returns></returns>
+        public static byte[] ToImage(this string base64) {
+            return base64.FromBase64();
+        }
+        /// <summary>
+        /// Convert image (<see cref="System.Byte[]"/>) to Base64
+        /// </summary>
+        /// <param name="image"></param>
+        /// <returns></returns>
+        public static string? FromImage(this byte[] image) {
+            return image.ToBase64();
         }
     }
 }

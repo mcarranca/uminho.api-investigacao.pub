@@ -27,17 +27,17 @@ namespace uminho.api_investigacao.pub.Controllers {
             AllowAnonymous]
         public IEnumerable<PersonEntity> GetAllPersons() => new PersonEntity[] {
             new PersonEntity() {
-                AdditionalName = "additionalName_01",
+                AdditionalName = "additionalName_00",
                 Concept = new PersonEntity.ConceptEntity[] { },
-                Email = "email _01",
-                FamilyName  = "familyName_01",
-                GivenName = "givenName_01",
-                InternalID = "internalID_01",
-                OrganizationInternalId = "organizationInternalId_01",
-                OrganizationRinggoldId = "organizationRinggoldId_01",
+                Email = "email _00",
+                FamilyName  = "familyName_00",
+                GivenName = "givenName_00",
+                InternalID = "internalID_00",
+                OrganizationInternalId = "organizationInternalId_00",
+                OrganizationRinggoldId = "organizationRinggoldId_00",
                 PersonIds = new PersonEntity[] { },
-                Phone = "phone_01",
-                Photo = "photo_01",
+                Phone = "phone_00",
+                Photo = "photo_00",
                 Positions = new PersonEntity.PositionEntity[] { },
                 Name = "name_01",
             },
@@ -105,10 +105,10 @@ namespace uminho.api_investigacao.pub.Controllers {
             AllowAnonymous]
         public IEnumerable<PersonEntity.PositionEntity> GetAllPersonPositions() => new PersonEntity.PositionEntity[] {
             new PersonEntity.PositionEntity() {
-                ID = "id_01",
-                Name = "name_01",
-                Start = "start_01",
-                End = "end_01",
+                ID = "id_00",
+                Name = "name_00",
+                Start = "start_00",
+                End = "end_00",
             },
             new PersonEntity.PositionEntity() {
                 ID = "id_01",
@@ -137,9 +137,9 @@ namespace uminho.api_investigacao.pub.Controllers {
             AllowAnonymous]
         public IEnumerable<PersonEntity.ConceptEntity> GetAllPersonConcepts() => new PersonEntity.ConceptEntity[] {
             new PersonEntity.ConceptEntity() {
-                ID = "id_01",
-                Name = "name_01",
-                OrganizationId = "organizationId_01",
+                ID = "id_00",
+                Name = "name_00",
+                OrganizationId = "organizationId_00",
             },
             new PersonEntity.ConceptEntity() {
                 ID = "id_01",

@@ -3,6 +3,8 @@
 
         #region Static property members
 
+        public static string? ConnectionString { get; private set; }
+
         /// <summary>
         /// Gets swagger settings
         /// </summary>
@@ -15,6 +17,10 @@
         internal static void LoadSettings(this ConfigurationManager configurationManager) {
             _ = configurationManager ?? throw new ArgumentNullException(nameof(configurationManager));
 
+            // global
+            ConnectionString = configurationManager.GetConnectionString("SQLConnectionString");
+
+            // sections
             SwaggerSetting = configurationManager.GetSection("Swagger").Get<SwaggerSetting>();
         }
 
